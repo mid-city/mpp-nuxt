@@ -1,0 +1,28 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  @apply text-gray-900;
+}
+
+.conatiner {
+  padding: 0 1rem;
+}
+
+.pageHeading {
+  @apply text-4xl;
+  @apply text-brand-normal;
+  @apply font-bold;
+  @apply mb-4;
+}
