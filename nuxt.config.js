@@ -5,6 +5,7 @@ const sanityClient = require('@sanity/client')
 const sanityOpts = {
   projectId: process.env.SANITY_PROJECT,
   dataset: process.env.SANITY_DATASET,
+  apiVersion: '2021-08-27',
   useCdn: false,
 }
 const sanity = sanityClient({
@@ -14,9 +15,11 @@ const sanity = sanityClient({
 
 // generates array of dynamic routes for generate.routes
 let dynamicRoutes = () => {
-  return sanity.fetch('*[]._id').then(res => {
-    return res.flatMap(id => [`/${id}`, `/${id}/details`, `/${id}/go`])
-  })
+  return sanity
+    .fetch('*[_type == "Manufacturer" || _type == "Rep"]._id')
+    .then(res => {
+      return res.flatMap(id => [`/${id}`, `/${id}/details`, `/${id}/go`])
+    })
 }
 
 // rest of config
