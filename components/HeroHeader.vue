@@ -138,7 +138,7 @@
             <div>
               <img
                 class="h-12 w-auto"
-                src="@/assets/img/logo.png"
+                src="https://res.cloudinary.com/mid-city/image/upload/v1630075633/MPP/logo_lka1nh.png"
                 alt="Mid-City Supply Co., Inc."
               />
             </div>
