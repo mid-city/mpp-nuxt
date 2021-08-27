@@ -1,6 +1,6 @@
-// Modified version of header found in hero component, for use in default layout
-
 <template>
+  <!-- Modified version of header found in hero component, for use in default layout
+-->
   <div class="lg:container lg:mx-auto sm:mb-6">
     <div class="relative pt-4 lg:pt-6 px-4">
       <nav class="relative flex items-center justify-between sm:h-16">
@@ -16,7 +16,7 @@
             >
               <img
                 class="h-12 w-auto sm:h-16"
-                src="@/assets/img/logo.png"
+                src="https://res.cloudinary.com/mid-city/image/upload/v1630075633/MPP/logo_lka1nh.png"
                 alt="Logo"
               />
             </a>
