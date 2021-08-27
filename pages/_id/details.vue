@@ -179,8 +179,14 @@
         </div>
 
         <video controls class="w-full mx-auto my-4">
-          <source src="~/assets/vid/promo.mp4" type="video/mp4" />
-          <source src="~/assets/vid/promo.webm" type="video/webm" />
+          <source
+            src="https://res.cloudinary.com/mid-city/video/upload/v1630075672/MPP/promo_lji0ev.mp4"
+            type="video/mp4"
+          />
+          <source
+            src="https://res.cloudinary.com/mid-city/video/upload/v1630075673/MPP/promo_wrw2cu.webm"
+            type="video/webm"
+          />
         </video>
       </div>
     </div>
