@@ -4,134 +4,112 @@
       >It looks like you have JavaScript disabled. This form will not work
       properly unless JavaScript is enabled.</noscript
     >
+    <h3>Your Information:</h3>
     <!-- Live Form -->
-    <form method="post" @submit.prevent="handleSubmit" id="responseForm">
-      <div class="deetdoot">
-        <input
-          v-model="form.address"
-          type="text"
-          name="address20"
-          autocomplete="off"
-        />
-      </div>
+    <FormulateForm @submit="handleSubmit">
+      <FormulateInput
+        v-model="form.address"
+        type="text"
+        name="address20"
+        autocomplete="off"
+        class="hidden absolute -l-80 -t-80"
+      />
 
       <!-- auto-filled per url param -->
-      <input v-model="form.vendorId" type="hidden" name="vendorId" />
-      <input v-model="form.vendorName" type="hidden" name="vendorName" />
+      <FormulateInput
+        v-model="form.vendorId"
+        type="hidden"
+        name="vendorId"
+        validation="required"
+      />
+      <FormulateInput
+        v-model="form.vendorName"
+        type="hidden"
+        name="vendorName"
+        validation="required"
+      />
 
       <!-- user-filled fields  -->
-      <fieldset class="personalInfo">
-        <legend>Your Information:</legend>
 
-        <div class="flex-wrap sm:flex-no-wrap">
-          <label for="name">Your Name</label>
-          <input
-            v-model="form.name"
-            type="text"
-            id="name"
-            name="name"
-            required
-            autocomplete="name"
-          />
-        </div>
+      <FormulateInput
+        v-model="form.name"
+        type="text"
+        name="name"
+        validation="required"
+        label="Full Name"
+      />
 
-        <div class="flex-wrap sm:flex-no-wrap">
-          <label for="email">Email Address</label>
-          <input
-            v-model="form.email710"
-            type="email"
-            id="email"
-            name="email710"
-            required
-            autocomplete="email"
-          />
-        </div>
+      <FormulateInput
+        v-model="form.email710"
+        type="email"
+        name="email710"
+        label="Email"
+        validation="required|email"
+      />
 
-        <div class="flex-wrap sm:flex-no-wrap">
-          <label for="phone">Daytime Phone</label>
-          <input
-            v-model="form.phone710"
-            type="tel"
-            id="phone"
-            name="phone710"
-            required
-            autocomplete="tel"
-          />
-        </div>
-      </fieldset>
+      <FormulateInput
+        v-model="form.phone"
+        type="tel"
+        name="phone"
+        label="Daytime Phone"
+        validation="required"
+      />
 
-      <fieldset>
-        <legend><label for="response">Your Response:</label></legend>
+      <FormulateInput
+        type="select"
+        v-model="form.response"
+        name="response"
+        label="Your Response:"
+        id="response"
+        autocomplete="off"
+        validation="required"
+        :options="[
+          { value: '', label: '-- Choose One --' },
+          {
+            value: 'yes',
+            label: 'Yes, we are committed to partnering with Mid-City Supply.',
+          },
+          {
+            value: 'maybe',
+            label:
+              'Please contact us. We would like to discuss further before we decide.',
+          },
+        ]"
+      />
+      <FormulateInput
+        v-if="form.response === 'yes'"
+        v-model="form.invoice"
+        id="select-invoice"
+        label="Would you like an invoice?"
+        type="select"
+        name="invoice"
+        autocomplete="off"
+        :options="[
+          { value: '', label: '-- Choose One --' },
+          { value: 'yes', label: 'Yes, please send us an invoice.' },
+          {
+            value: 'no',
+            label: 'No, we will remit a check, credit memo, or free goods.',
+          },
+        ]"
+      />
+      <FormulateInput
+        type="textarea"
+        v-model="form.comments"
+        label="Additional Comments"
+        name="comments"
+        id="comments"
+        cols="30"
+        rows="5"
+        autocomplete="off"
+      />
 
-        <select
-          v-model="form.response"
-          name="response"
-          id="response"
-          required
-          autocomplete="off"
-        >
-          <option value="">-- Choose One --</option>
-          <option value="yes">
-            Yes, we are committed to partnering with Mid-City Supply.
-          </option>
-
-          <option value="maybe">
-            Please contact us. We would like to discuss further before we
-            decide.
-          </option>
-        </select>
-        <div v-if="showInvoiceOpt" class="invoiceOpt">
-          <label for="select-invoice" class="mb-2 mt-6 font-bold block"
-            >Would you like an invoice?</label
-          >
-
-          <select
-            v-model="form.invoice"
-            name="invoice"
-            id="select-invoice"
-            autocomplete="off"
-          >
-            <option value="">-- Choose One --</option>
-            <option value="yes">Yes, please send us an invoice</option>
-            <option value="no">
-              No, we will remit a check, credit memo, or free goods
-            </option>
-          </select>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend><label for="comments">Additional Comments</label></legend>
-        <textarea
-          v-model="form.comments"
-          name="comments"
-          id="comments"
-          cols="30"
-          rows="5"
-          class="p-4"
-          autocomplete="off"
-        ></textarea>
-      </fieldset>
+      <FormulateInput
+        v-if="!submissionStatus"
+        type="submit"
+        :name="loading ? 'Processing...' : 'Submit'"
+      />
       <div class="text-center">
-        <button
-          v-if="!submissionStatus"
-          type="submit"
-          class="
-            px-16
-            py-2
-            bg-brand-dark
-            text-gray-50
-            rounded
-            text-lg
-            w-full
-            sm:w-auto
-            hover:bg-brand-light
-            hover:text-white
-            cursor-pointer
-          "
-        >
-          {{ loading ? 'Processing...' : 'Submit' }}
-        </button>
-
         <!-- submission message -->
         <div
           v-if="submissionStatus"
@@ -153,7 +131,7 @@
           </p>
         </div>
       </div>
-    </form>
+    </FormulateForm>
   </div>
 </template>
 <script>
@@ -178,7 +156,7 @@ export default {
       form: {
         name: '',
         email10: '',
-        phone710: '',
+        phone: '',
         response: '',
         invoice: '',
         comments: '',
@@ -222,7 +200,7 @@ export default {
       const submission = {
         name: this.form.name,
         email710: this.form.email710,
-        phone710: this.form.phone710,
+        phone: this.form.phone,
         response: this.form.response,
         invoice: this.form.invoice,
         comments: this.form.comments,
@@ -252,55 +230,279 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-fieldset input,
-textarea,
-select {
-  @apply border-2;
-  @apply border-gray-400;
-  @apply rounded;
+<style>
+.formulate-input {
+  margin-bottom: 1.5em;
 }
-
-fieldset {
-  @apply mb-4;
-  @apply rounded;
-  @apply py-4;
+.formulate-input .formulate-input-label {
+  display: block;
+  line-height: 1.5;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-bottom: 0.1em;
 }
-fieldset > div {
-  @apply my-2;
+.formulate-input
+  .formulate-input-label--before
+  + .formulate-input-help--before {
+  margin-top: -0.25em;
+  margin-bottom: 0.75em;
 }
-.personalInfo > div {
-  @apply flex;
-  @apply justify-between;
-  @apply items-center;
+.formulate-input .formulate-input-element {
+  max-width: 20em;
+  margin-bottom: 0.1em;
 }
-.personalInfo label {
-  @apply w-48;
+.formulate-input .formulate-input-help {
+  color: #6d6d6d;
+  font-size: 0.7em;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0.25em;
 }
-.personalInfo input,
-select {
-  @apply w-full;
-  @apply px-4;
-  @apply py-2;
+.formulate-input .formulate-input-errors {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
-legend {
-  @apply font-bold;
-  @apply mt-4;
+.formulate-input .formulate-file-upload-error,
+.formulate-input .formulate-input-error {
+  color: #d93921;
+  font-size: 0.8em;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 0.25em;
 }
-textarea {
-  @apply w-full;
+.formulate-input:last-child {
+  margin-bottom: 0;
 }
-.invoiceOpt input {
-  @apply my-2;
+.formulate-input[data-classification='text'] input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.3em;
+  border: 1px solid #cecece;
+  box-sizing: border-box;
+  background-color: transparent;
+  font-size: 0.9em;
+  padding: 0.75em;
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin: 0;
 }
-.deetdoot {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 0;
+.formulate-input[data-classification='text'] input::-moz-placeholder {
+  color: #a8a8a8;
+  line-height: normal;
+}
+.formulate-input[data-classification='text'] input:-ms-input-placeholder {
+  color: #a8a8a8;
+  line-height: normal;
+}
+.formulate-input[data-classification='text'] input::placeholder {
+  color: #a8a8a8;
+  line-height: normal;
+}
+.formulate-input[data-classification='text'] input:focus {
+  outline: 0;
+  border: 1px solid #821a1f;
+}
+.formulate-input[data-classification='text']
+  .formulate-input-element--date
+  input,
+.formulate-input[data-classification='text']
+  .formulate-input-element--datetime-local
+  input,
+.formulate-input[data-classification='text']
+  .formulate-input-element--month
+  input,
+.formulate-input[data-classification='text']
+  .formulate-input-element--week
+  input {
+  min-height: 2.2em;
+}
+.formulate-input[data-classification='textarea'] textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.3em;
+  border: 1px solid #cecece;
+  box-sizing: border-box;
+  background-color: transparent;
+  font-size: 0.9em;
+  padding: 0.75em;
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin: 0;
+}
+.formulate-input[data-classification='textarea'] textarea::-moz-placeholder {
+  color: #a8a8a8;
+  line-height: normal;
+}
+.formulate-input[data-classification='textarea']
+  textarea:-ms-input-placeholder {
+  color: #a8a8a8;
+  line-height: normal;
+}
+.formulate-input[data-classification='textarea'] textarea::placeholder {
+  color: #a8a8a8;
+  line-height: normal;
+}
+.formulate-input[data-classification='textarea'] textarea:focus {
+  outline: 0;
+  border: 1px solid #821a1f;
+}
+.formulate-input[data-classification='button'] button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.3em;
+  box-sizing: border-box;
+  background-color: transparent;
+  font-size: 0.9em;
+  padding: 0.75em;
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin: 0;
+  border: 1px solid #c1262e;
+  background-color: #c1262e;
+  color: #fff;
+  min-width: 0;
+  width: auto;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.formulate-input[data-classification='button'] button::-moz-placeholder {
+  color: #a8a8a8;
+  line-height: normal;
+}
+.formulate-input[data-classification='button'] button:-ms-input-placeholder {
+  color: #a8a8a8;
+  line-height: normal;
+}
+.formulate-input[data-classification='button'] button::placeholder {
+  color: #a8a8a8;
+  line-height: normal;
+}
+.formulate-input[data-classification='button'] button:focus {
+  outline: 0;
+  border: 1px solid #c1262e;
+}
+.formulate-input[data-classification='button'] button[disabled],
+.formulate-input[data-classification='button'] button[disabled]:active {
+  background-color: #cecece;
+  border-color: #cecece;
+}
+.formulate-input[data-classification='button'] button[data-ghost] {
+  color: #c1262e;
+  background-color: transparent;
+  border-color: currentColor;
+}
+.formulate-input[data-classification='button'] button[data-minor] {
+  font-size: 0.75em;
+  display: inline-block;
+}
+.formulate-input[data-classification='button'] button[data-danger] {
+  background-color: #d93921;
+  border-color: #d93921;
+}
+.formulate-input[data-classification='button'] button[data-danger][data-ghost] {
+  color: #d93921;
+  background-color: transparent;
+}
+.formulate-input[data-classification='button'] button:active {
+  background-color: #cc666b;
+  border-color: #cc666b;
+}
+.formulate-input[data-classification='select'] .formulate-input-element {
+  position: relative;
+}
+.formulate-input[data-classification='select'] .formulate-input-element:before {
+  content: '';
   width: 0;
-  z-index: -1;
+  height: 0;
+  border-color: #cecece transparent transparent;
+  border-style: solid;
+  border-width: 0.3em 0.3em 0;
+  top: 50%;
+  margin-top: -0.1em;
+  right: 1em;
+  position: absolute;
+}
+.formulate-input[data-classification='select']
+  .formulate-input-element[data-multiple]:before {
+  display: none;
+}
+.formulate-input[data-classification='select'] select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.3em;
+  border: 1px solid #cecece;
+  box-sizing: border-box;
+  background-color: transparent;
+  font-size: 0.9em;
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin: 0;
+  padding: 0.75em 2em 0.75em 0.75em;
+}
+.formulate-input[data-classification='select'] select::-moz-placeholder {
+  color: #a8a8a8;
+  line-height: normal;
+}
+.formulate-input[data-classification='select'] select:-ms-input-placeholder {
+  color: #a8a8a8;
+  line-height: normal;
+}
+.formulate-input[data-classification='select'] select::placeholder {
+  color: #a8a8a8;
+  line-height: normal;
+}
+.formulate-input[data-classification='select'] select:focus {
+  outline: 0;
+  border: 1px solid #821a1f;
+}
+.formulate-input[data-classification='select'] select option {
+  color: #000;
+}
+.formulate-input[data-classification='select'] select option:disabled {
+  color: #a8a8a8;
+}
+.formulate-input[data-classification='select'] select[multiple] {
+  padding: 0;
+  overflow-y: auto;
+}
+.formulate-input[data-classification='select'] select[multiple] option {
+  padding: 0.75em;
+}
+.formulate-input[data-classification='select']
+  select[data-placeholder-selected] {
+  color: #a8a8a8;
+}
+.formulate-form-errors {
+  margin: 0.75em 0;
+  padding: 0;
+  list-style-type: none;
+}
+.formulate-form-errors:first-child {
+  margin-top: 0;
+}
+.formulate-form-errors:last-child {
+  margin-bottom: 0;
+}
+.formulate-form-errors .formulate-form-error {
+  color: #d93921;
+  font-size: 0.9em;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 0.25em;
 }
 </style>
