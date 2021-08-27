@@ -2,7 +2,7 @@
   <!-- Modified version of header found in hero component, for use in default layout
 -->
   <div class="lg:container lg:mx-auto sm:mb-6">
-    <div class="relative pt-4 lg:pt-6 px-4">
+    <div class="relative pt-4 lg:pt-6 px-4 sm:px-6 lg:px-8">
       <nav class="relative flex items-center justify-between sm:h-16">
         <div class="flex items-center flex-grow lg:flex-grow-0">
           <div
