@@ -8,10 +8,5 @@
 <script>
 export default {
   layout: 'landing',
-  head() {
-    return {
-      title: 'Mid-City MPP 2021'
-    }
-  }
 }
 </script>

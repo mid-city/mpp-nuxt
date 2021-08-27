@@ -38,7 +38,12 @@ export default {
   css: ['~/assets/css/main.css'],
 
   head: {
-    title: 'Mid-City MPP 2022',
+    titleTemplate: titleChunk => {
+      return titleChunk
+        ? `${titleChunk} - Mid-City MPP 2022`
+        : 'Mid-City MPP 2022'
+    },
+
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

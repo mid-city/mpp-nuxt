@@ -27,12 +27,14 @@ export default {
   },
   async fetch() {
     const query = groq`*[_id == $id][0]`
-    const result = await this.$sanity.fetch(query, { id: this.$route.params.id })
+    const result = await this.$sanity.fetch(query, {
+      id: this.$route.params.id,
+    })
     this.vend = result
   },
   head() {
     return {
-      title: `Get Started | Mid-City MPP 2021 - ${this.vend.name}`,
+      title: `Get Started - ${this.vend.name}`,
     }
   },
 }

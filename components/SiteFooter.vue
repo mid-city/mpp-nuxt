@@ -12,7 +12,11 @@
     <div class="social">
       <h3>Let's Connect!</h3>
 
-      <a href="https://www.facebook.com/midcitysupply" rel="noopener" target="_blank">
+      <a
+        href="https://www.facebook.com/midcitysupply"
+        rel="noopener"
+        target="_blank"
+      >
         <fa-icon :icon="['fab', 'facebook']" class="fa-2x" />
       </a>
       <a
@@ -22,14 +26,22 @@
       >
         <fa-icon :icon="['fab', 'linkedin']" class="fa-2x fa-fw" />
       </a>
-      <a href="https://www.youtube.com/user/MidCitySupply" rel="noopener" target="_blank">
+      <a
+        href="https://www.youtube.com/user/MidCitySupply"
+        rel="noopener"
+        target="_blank"
+      >
         <fa-icon :icon="['fab', 'youtube']" class="fa-2x fa-fw" />
       </a>
-      <a href="https://www.instagram.com/midcitysupply/" rel="noopener" target="_blank">
+      <a
+        href="https://www.instagram.com/midcitysupply/"
+        rel="noopener"
+        target="_blank"
+      >
         <fa-icon :icon="['fab', 'instagram']" class="fa-2x fa-fw" />
       </a>
     </div>
-    <p class="copyright">Copyright &copy; 2020 Mid-City Supply Co., Inc.</p>
+    <p class="copyright">Copyright &copy; 2021 Mid-City Supply Co., Inc.</p>
   </footer>
 </template>
 

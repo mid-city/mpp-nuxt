@@ -16,12 +16,14 @@ export default {
     }
   },
   async fetch() {
-    const result = await this.$sanity.fetch(query, { id: this.$route.params.id })
+    const result = await this.$sanity.fetch(query, {
+      id: this.$route.params.id,
+    })
     this.name = result
   },
   head() {
     return {
-      title: `Mid-City MPP 2021 - ${this.name}`,
+      title: `${this.name}`,
     }
   },
 }

@@ -1,13 +1,18 @@
 <template>
   <div class="p-4 relative rounded m-1">
     <noscript class="text-red-700 mb-8 inline-block"
-      >It looks like you have JavaScript disabled. This form will not work properly unless
-      JavaScript is enabled.</noscript
+      >It looks like you have JavaScript disabled. This form will not work
+      properly unless JavaScript is enabled.</noscript
     >
     <!-- Live Form -->
     <form method="post" @submit.prevent="handleSubmit" id="responseForm">
       <div class="deetdoot">
-        <input v-model="form.address" type="text" name="address20" autocomplete="off" />
+        <input
+          v-model="form.address"
+          type="text"
+          name="address20"
+          autocomplete="off"
+        />
       </div>
 
       <!-- auto-filled per url param -->
@@ -58,23 +63,39 @@
       <fieldset>
         <legend><label for="response">Your Response:</label></legend>
 
-        <select v-model="form.response" name="response" id="response" required autocomplete="off">
+        <select
+          v-model="form.response"
+          name="response"
+          id="response"
+          required
+          autocomplete="off"
+        >
           <option value="">-- Choose One --</option>
-          <option value="yes">Yes, we are committed to partnering with Mid-City Supply.</option>
+          <option value="yes">
+            Yes, we are committed to partnering with Mid-City Supply.
+          </option>
 
-          <option value="maybe"
-            >Please contact us. We would like to discuss further before we decide.</option
-          >
+          <option value="maybe">
+            Please contact us. We would like to discuss further before we
+            decide.
+          </option>
         </select>
         <div v-if="showInvoiceOpt" class="invoiceOpt">
           <label for="select-invoice" class="mb-2 mt-6 font-bold block"
             >Would you like an invoice?</label
           >
 
-          <select v-model="form.invoice" name="invoice" id="select-invoice" autocomplete="off">
+          <select
+            v-model="form.invoice"
+            name="invoice"
+            id="select-invoice"
+            autocomplete="off"
+          >
             <option value="">-- Choose One --</option>
             <option value="yes">Yes, please send us an invoice</option>
-            <option value="no">No, we will remit a check, credit memo, or free goods</option>
+            <option value="no">
+              No, we will remit a check, credit memo, or free goods
+            </option>
           </select>
         </div>
       </fieldset>
@@ -94,7 +115,19 @@
         <button
           v-if="!submissionStatus"
           type="submit"
-          class="px-16 py-2 bg-brand-dark text-gray-50 rounded text-lg w-full sm:w-auto hover:bg-brand-light hover:text-white cursor-pointer"
+          class="
+            px-16
+            py-2
+            bg-brand-dark
+            text-gray-50
+            rounded
+            text-lg
+            w-full
+            sm:w-auto
+            hover:bg-brand-light
+            hover:text-white
+            cursor-pointer
+          "
         >
           {{ loading ? 'Processing...' : 'Submit' }}
         </button>
@@ -102,7 +135,18 @@
         <!-- submission message -->
         <div
           v-if="submissionStatus"
-          class="absolute top-0 left-0 w-full h-full z-10 bg-white flex justify-evenly items-center"
+          class="
+            absolute
+            top-0
+            left-0
+            w-full
+            h-full
+            z-10
+            bg-white
+            flex
+            justify-evenly
+            items-center
+          "
         >
           <p>
             {{ submitMessage }}
@@ -113,7 +157,8 @@
   </div>
 </template>
 <script>
-const apiEndpoint = 'https://elwa6hcow0.execute-api.us-east-1.amazonaws.com/dev/response'
+const apiEndpoint =
+  'https://elwa6hcow0.execute-api.us-east-1.amazonaws.com/dev/response'
 export default {
   name: 'ResponseForm',
   props: {

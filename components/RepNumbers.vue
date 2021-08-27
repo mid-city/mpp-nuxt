@@ -11,8 +11,9 @@
         >.
       </p>
       <p>
-        Your commitment to the program is due by <strong>December 31, 2020</strong>. Payment will be
-        due by <strong>February 26, 2021</strong>.
+        Your commitment to the program is due by
+        <strong>December 31, 2021</strong>. Payment will be due by
+        <strong>February 26, 2022</strong>.
       </p>
       <p>
         Questions? Please contact Leah Cooper at
