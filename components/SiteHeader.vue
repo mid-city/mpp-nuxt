@@ -93,7 +93,7 @@
             text-brand-normal
           "
         >
-          <h1>2021 Marketing Partnership Plan</h1>
+          <h1>2022 Marketing Partnership Plan</h1>
         </nuxt-link>
         <div class="hidden lg:block md:ml-10 md:pr-4 md:order-3">
           <NuxtLink
