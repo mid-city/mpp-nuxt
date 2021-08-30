@@ -4,30 +4,22 @@
       >It looks like you have JavaScript disabled. This form will not work
       properly unless JavaScript is enabled.</noscript
     >
-    <h3>Your Information:</h3>
+    <h3 class="text-brand-normal font-bold">Your Information:</h3>
     <!-- Live Form -->
-    <FormulateForm @submit="handleSubmit">
+    <FormulateForm
+      name="responseForm"
+      @submit="submitResponse"
+      #default="context"
+    >
       <FormulateInput
         v-model="form.address"
         type="text"
         name="address20"
         autocomplete="off"
-        class="hidden absolute -l-80 -t-80"
+        class="hidden fixed -l-80 -t-80"
       />
 
       <!-- auto-filled per url param -->
-      <FormulateInput
-        v-model="form.vendorId"
-        type="hidden"
-        name="vendorId"
-        validation="required"
-      />
-      <FormulateInput
-        v-model="form.vendorName"
-        type="hidden"
-        name="vendorName"
-        validation="required"
-      />
 
       <!-- user-filled fields  -->
 
@@ -86,6 +78,7 @@
       <FormulateInput
         v-if="form.response === 'yes'"
         v-model="form.invoice"
+        key="invoicePreference"
         id="select-invoice"
         label="Would you like an invoice?"
         type="select"
@@ -110,34 +103,15 @@
         rows="5"
         autocomplete="off"
       />
-
-      <FormulateInput
-        v-if="!submissionStatus"
-        type="submit"
-        :name="loading ? 'Processing...' : 'Submit'"
-      />
-      <div class="text-center">
-        <!-- submission message -->
-        <div
-          v-if="submissionStatus"
-          class="
-            absolute
-            top-0
-            left-0
-            w-full
-            h-full
-            z-10
-            bg-white
-            flex
-            justify-evenly
-            items-center
-          "
-        >
-          <p>
-            {{ submitMessage }}
-          </p>
-        </div>
+      <FormulateErrors class="text-center" />
+      <div class="mb-8 text-center" v-if="success">
+        Thanks for your response! You should receive a confirmation email soon.
       </div>
+      <FormulateInput
+        type="submit"
+        :disabled="context.hasErrors"
+        :name="context.isLoading ? 'Processing...' : 'Submit'"
+      />
     </FormulateForm>
   </div>
 </template>
@@ -158,8 +132,6 @@ export default {
   },
   data() {
     return {
-      submissionStatus: null,
-      loading: false,
       form: {
         name: '',
         email10: '',
@@ -167,72 +139,31 @@ export default {
         response: '',
         invoice: '',
         comments: '',
-        vendorId: this.vendId,
-        vendorName: this.vendName,
         address: '',
       },
+      success: false,
     }
   },
-  computed: {
-    showInvoiceOpt() {
-      if (this.form.response === 'yes') {
-        return true
-      } else {
-        return false
-      }
-    },
-    submitMessage() {
-      if (this.submissionStatus === 'success') {
-        return 'Thank you for your submission. Your response has been received, and you will receive a confirmation email shortly.'
-      } else if (this.submissionStatus === 'error') {
-        return 'Sorry! There was a problem when trying to submit your response. Please contact webmaster@mid-city.com for assistance.'
-      }
-    },
-  },
   methods: {
-    handleSubmit() {
-      this.submissionStatus = 'processing'
-      // Validation
-      const regName = /[A-Za-z]{1}[A-Za-z]/
-      const regEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/
-      if (!regName.test(this.form.name)) {
-        alert('Name must be at least 2 characters long.')
-        return
-      }
-      if (!regEmail.test(this.form.email710)) {
-        alert('Please enter a valid email.')
-        return
-      }
-
-      const submission = {
-        name: this.form.name,
-        email710: this.form.email710,
-        phone: this.form.phone,
-        response: this.form.response,
-        invoice: this.form.invoice,
-        comments: this.form.comments,
-        vendorId: this.vendId,
-        vendorName: this.vendName,
-        address: this.form.address,
-      }
-
-      this.$axios({
-        method: 'post',
-        url: apiEndpoint,
-        data: submission,
-        headers: {
-          Accept: 'application/json; charset=utf-8',
-          'Content-Type': 'application/json; charset=UTF-8',
-        },
-      })
-        .then((res) => {
-          this.submissionStatus = 'success'
-          this.loading = false
+    async submitResponse(data) {
+      try {
+        await this.$axios({
+          method: 'post',
+          url: apiEndpoint,
+          data: {
+            vendorId: this.vendId,
+            vendorName: this.vendName,
+            ...data,
+          },
+          headers: {
+            Accept: 'application/json; charset=utf-8',
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
         })
-        .catch((err) => {
-          this.submissionStatus = 'error'
-          console.error(err)
-        })
+        this.success = true
+      } catch (err) {
+        this.$formulate.handle(err, 'responseForm')
+      }
     },
   },
 }
