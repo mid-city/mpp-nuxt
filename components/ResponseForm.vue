@@ -35,23 +35,27 @@
         v-model="form.name"
         type="text"
         name="name"
-        validation="required"
-        label="Full Name"
+        validation="bail|required"
+        label="Full Name:"
       />
 
       <FormulateInput
         v-model="form.email710"
         type="email"
         name="email710"
-        label="Email"
-        validation="required|email"
+        label="Email:"
+        validation="bail|required|email"
+        :validation-messages="{
+          required: 'Email is required.',
+          email: 'This doesn\'t look like a valid email address.',
+        }"
       />
 
       <FormulateInput
         v-model="form.phone"
         type="tel"
         name="phone"
-        label="Daytime Phone"
+        label="Daytime Phone:"
         validation="required"
       />
 
@@ -63,6 +67,9 @@
         id="response"
         autocomplete="off"
         validation="required"
+        :validation-messages="{
+          required: 'Please choose a response.',
+        }"
         :options="[
           { value: '', label: '-- Choose One --' },
           {
@@ -96,7 +103,7 @@
       <FormulateInput
         type="textarea"
         v-model="form.comments"
-        label="Additional Comments"
+        label="Additional Comments:"
         name="comments"
         id="comments"
         cols="30"
@@ -234,6 +241,21 @@ export default {
 .formulate-input {
   margin-bottom: 1.5em;
 }
+.formulate-input[data-classification='text'] .formulate-input-wrapper {
+  @apply sm:flex flex-wrap items-center justify-between;
+}
+.formulate-input[data-classification='select'] .formulate-input-wrapper {
+  @apply md:flex lg:block xl:flex flex-wrap items-center justify-between;
+}
+.formulate-input[data-classification='select'] .formulate-input-element {
+  @apply w-full md:w-8/12 lg:w-full xl:w-8/12;
+}
+.formulate-input-element--submit {
+  @apply text-center mx-auto;
+}
+.formulate-input-element--submit--label {
+  @apply w-full;
+}
 .formulate-input .formulate-input-label {
   display: block;
   line-height: 1.5;
@@ -248,7 +270,8 @@ export default {
   margin-bottom: 0.75em;
 }
 .formulate-input .formulate-input-element {
-  max-width: 20em;
+  /*max-width: 20em;*/
+  @apply sm:w-9/12;
   margin-bottom: 0.1em;
 }
 .formulate-input .formulate-input-help {
@@ -320,6 +343,9 @@ export default {
   input {
   min-height: 2.2em;
 }
+.formulate-input[data-classification='textarea'] .formulate-input-element {
+  @apply w-full;
+}
 .formulate-input[data-classification='textarea'] textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -371,11 +397,11 @@ export default {
   background-color: #c1262e;
   color: #fff;
   min-width: 0;
-  width: auto;
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  @apply w-40;
 }
 .formulate-input[data-classification='button'] button::-moz-placeholder {
   color: #a8a8a8;
