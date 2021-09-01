@@ -64,6 +64,11 @@ export default {
 
   sanity: sanityOpts,
 
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseUrl: process.env.BROWSER_BASE_URL,
+    },
+  },
   privateRuntimeConfig: {
     sanity: {
       token: process.env.SANITY_TOKEN,

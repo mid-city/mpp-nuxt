@@ -112,7 +112,7 @@
   </div>
 </template>
 <script>
-const apiEndpoint = process.env.RESPONSE_ENDPOINT
+const apiEndpoint = '/response'
 export default {
   name: 'ResponseForm',
   props: {
