@@ -1,6 +1,16 @@
 <template>
   <div
-    class="container mx-auto grid grid-cols-1 text-sm md:text-base mb-6 px-4"
+    class="
+      container
+      mx-auto
+      grid grid-cols-1
+      text-sm
+      md:text-base
+      mb-6
+      px-4
+      sm:px-6
+      lg:px-8
+    "
   >
     <Greeting :name="name" class="py-4" />
     <h2 class="pageHeading">Plan Details</h2>

@@ -34,6 +34,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/fontawesome',
     '@nuxtjs/sanity/module',
+    '@braid/vue-formulate/nuxt',
   ],
 
   plugins: ['~/plugins/vue-gtag.js'],

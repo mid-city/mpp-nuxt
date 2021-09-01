@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto mb-6 px-4">
+  <div class="container mx-auto mb-6 px-4 sm:px-6 lg:px-8">
     <h2 class="pageHeading">Get Started</h2>
     <div class="prose">
       <p>
