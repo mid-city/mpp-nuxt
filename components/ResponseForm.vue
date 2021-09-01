@@ -14,14 +14,10 @@
       <FormulateInput
         v-model="form.address"
         type="text"
-        name="address20"
+        name="address"
         autocomplete="off"
         class="hidden fixed -l-80 -t-80"
       />
-
-      <!-- auto-filled per url param -->
-
-      <!-- user-filled fields  -->
 
       <FormulateInput
         v-model="form.name"
@@ -32,9 +28,9 @@
       />
 
       <FormulateInput
-        v-model="form.email710"
+        v-model="form.email"
         type="email"
-        name="email710"
+        name="email"
         label="Email:"
         validation="bail|required|email"
         :validation-messages="{
@@ -116,8 +112,7 @@
   </div>
 </template>
 <script>
-const apiEndpoint =
-  'https://elwa6hcow0.execute-api.us-east-1.amazonaws.com/dev/response'
+const apiEndpoint = process.env.RESPONSE_ENDPOINT
 export default {
   name: 'ResponseForm',
   props: {
@@ -134,7 +129,7 @@ export default {
     return {
       form: {
         name: '',
-        email10: '',
+        email: '',
         phone: '',
         response: '',
         invoice: '',
