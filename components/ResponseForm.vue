@@ -52,7 +52,6 @@
         v-model="form.response"
         name="response"
         label="Your Response:"
-        id="response"
         autocomplete="off"
         validation="required"
         :validation-messages="{
@@ -71,11 +70,11 @@
           },
         ]"
       />
+
       <FormulateInput
         v-if="form.response === 'yes'"
         v-model="form.invoice"
         key="invoicePreference"
-        id="select-invoice"
         label="Would you like an invoice?"
         type="select"
         name="invoice"
@@ -89,20 +88,46 @@
           },
         ]"
       />
+
+      <FormulateInput
+        v-if="form.response === 'maybe'"
+        v-model="contactPreference"
+        type="select"
+        name="contactPreference"
+        label="Contact Preference:"
+        autocomplete="off"
+        :options="[
+          { value: 'any', label: 'No Preference' },
+          { value: 'call', label: 'Conference Call' },
+          { value: 'email', label: 'Email' },
+        ]"
+      />
+
+      <FormulateInput
+        v-if="form.response === 'maybe'"
+        v-model="form.questions"
+        type="textarea"
+        name="questions"
+        label="What questions do you have?"
+        rows="5"
+        autocomplete="off"
+      />
+
       <FormulateInput
         type="textarea"
         v-model="form.comments"
         label="Additional Comments:"
         name="comments"
-        id="comments"
-        cols="30"
         rows="5"
         autocomplete="off"
       />
+
       <FormulateErrors class="text-center" />
+
       <div class="mb-8 text-center" v-if="success">
         Thanks for your response! You should receive a confirmation email soon.
       </div>
+
       <FormulateInput
         type="submit"
         :disabled="context.hasErrors"
@@ -132,6 +157,8 @@ export default {
         email: '',
         phone: '',
         response: '',
+        questions: '',
+        contactPreference: '',
         invoice: '',
         comments: '',
         address: '',
