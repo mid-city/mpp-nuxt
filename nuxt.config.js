@@ -5,7 +5,7 @@ const sanityClient = require('@sanity/client')
 const sanityOpts = {
   projectId: process.env.SANITY_PROJECT,
   dataset: process.env.SANITY_DATASET,
-  apiVersion: '2021-08-27',
+  apiVersion: '2021-10-11',
   useCdn: false,
 }
 const sanity = sanityClient({
