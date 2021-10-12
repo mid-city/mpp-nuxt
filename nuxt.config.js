@@ -35,6 +35,7 @@ export default {
     '@nuxtjs/fontawesome',
     '@nuxtjs/sanity/module',
     '@braid/vue-formulate/nuxt',
+    '@nuxt/image',
   ],
 
   plugins: ['~/plugins/vue-gtag.js'],
@@ -63,6 +64,13 @@ export default {
   },
 
   sanity: sanityOpts,
+
+  image: {
+    provider: 'cloudinary',
+    cloudinary: {
+      baseURL: 'https://res.cloudinary.com/mid-city/image/upload/',
+    },
+  },
 
   publicRuntimeConfig: {
     axios: {

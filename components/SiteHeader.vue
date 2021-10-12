@@ -3,23 +3,12 @@
 -->
   <div class="lg:container lg:mx-auto sm:mb-6">
     <div class="relative pt-4 lg:pt-6 px-4 sm:px-6 lg:px-8">
-      <nav class="relative flex items-center justify-between sm:h-16">
+      <nav class="relative flex items-center justify-between">
         <div class="flex items-center flex-grow lg:flex-grow-0">
           <div
             class="flex items-center justify-between w-full lg:w-auto flex-wrap"
           >
-            <a
-              href="https://www.mid-city.com/"
-              rel="noopener"
-              target="_blank"
-              class="order-1"
-            >
-              <img
-                class="h-12 w-auto sm:h-16"
-                src="https://res.cloudinary.com/mid-city/image/upload/v1630075633/MPP/logo_lka1nh.png"
-                alt="Logo"
-              />
-            </a>
+            <Logo class="order-1" />
             <NuxtLink
               :to="pathPrefix"
               class="
@@ -80,7 +69,7 @@
             </div>
           </div>
         </div>
-        <nuxt-link
+        <NuxtLink
           to="./"
           class="
             heading
@@ -94,7 +83,7 @@
           "
         >
           <h1>2022 Marketing Partnership Plan</h1>
-        </nuxt-link>
+        </NuxtLink>
         <div class="hidden lg:block md:ml-10 md:pr-4 md:order-3">
           <NuxtLink
             :to="pathPrefix"
@@ -169,13 +158,7 @@
           aria-labelledby="main-menu"
         >
           <div class="px-5 pt-4 flex items-center justify-between">
-            <div>
-              <img
-                class="h-12 w-auto"
-                src="https://res.cloudinary.com/mid-city/image/upload/v1630075633/MPP/logo_lka1nh.png"
-                alt="Mid-City Supply Co., Inc."
-              />
-            </div>
+            <Logo />
             <div class="-mr-2">
               <button
                 type="button"
@@ -300,6 +283,8 @@ export default {
   data() {
     return {
       menuClass: 'hidden opacity-0 scale-95 duration-150 ease-out',
+      logoUrl:
+        'https://res.cloudinary.com/mid-city/image/upload/c_scale,f_auto,q_auto:best,w_200/v1634048833/Logos/MID-CITY_SUPPLY_75TH_red-black_voslqb.png',
     }
   },
   computed: {
