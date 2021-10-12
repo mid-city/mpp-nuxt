@@ -1,25 +1,10 @@
 <template>
   <div>
     <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
-      <nav
-        class="
-          relative
-          flex
-          items-center
-          justify-between
-          sm:h-16
-          lg:justify-start
-        "
-      >
+      <nav class="relative flex items-center justify-between lg:justify-start">
         <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
           <div class="flex items-center justify-between w-full md:w-auto">
-            <a href="https://www.mid-city.com/" rel="noopener" target="_blank">
-              <img
-                class="h-12 w-auto sm:h-16"
-                src="https://res.cloudinary.com/mid-city/image/upload/v1630075633/MPP/logo_lka1nh.png"
-                alt="Logo"
-              />
-            </a>
+            <Logo />
             <div class="-mr-2 flex items-center md:hidden">
               <button
                 type="button"
@@ -135,13 +120,7 @@
           aria-labelledby="main-menu"
         >
           <div class="px-5 pt-4 flex items-center justify-between">
-            <div>
-              <img
-                class="h-12 w-auto"
-                src="https://res.cloudinary.com/mid-city/image/upload/v1630075633/MPP/logo_lka1nh.png"
-                alt="Mid-City Supply Co., Inc."
-              />
-            </div>
+            <Logo />
             <div class="-mr-2">
               <button
                 type="button"
