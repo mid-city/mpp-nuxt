@@ -20,33 +20,16 @@
         <div class="mb-4 sm:mb-0 px-8 sm:px-0">
           <p class="text-lg text-brand-normal my-2 ml-1 font-bold">Downloads</p>
           <a
-            :href="docs.calendar"
-            class="hover:underline focus:underline"
+            v-for="link in content.downloads"
+            :key="link._key"
+            :href="link.fileUrl"
             target="_blank"
             rel="noopener"
-            ><fa-icon
-              :icon="['fas', 'calendar']"
-              class="fa-fw fa-2x"
-            />Marketing Calendar</a
-          >
-          <a
-            :href="docs.programs"
             class="hover:underline focus:underline"
-            target="_blank"
-            rel="noopener"
-            ><fa-icon :icon="['fas', 'file-alt']" class="fa-fw fa-2x" />Program
-            Listing</a
           >
-          <a
-            :href="docs.expenses"
-            class="hover:underline focus:underline"
-            target="_blank"
-            rel="noopener"
-            ><fa-icon
-              :icon="['fas', 'file-invoice-dollar']"
-              class="fa-fw fa-2x"
-            />Expenses</a
-          >
+            <FaIcon :icon="['fas', link.icon]" class="fa-fw fa-2x" />
+            {{ link.title }}
+          </a>
         </div>
         <CtaBtn :url="pathPrefix + 'go'" class="flex-none hidden sm:block" />
       </div>
@@ -69,48 +52,23 @@
           <div>
             <p class="text-lg text-brand-normal my-2 ml-1">Downloads</p>
             <a
-              :href="docs.calendar"
-              class="hover:underline focus:underline"
+              v-for="link in content.downloads"
+              :key="link._key"
+              :href="link.fileUrl"
               target="_blank"
               rel="noopener"
-              ><fa-icon
-                :icon="['fas', 'calendar']"
-                class="fa-fw fa-2x"
-              />Marketing Calendar</a
-            >
-            <a
-              :href="docs.programs"
               class="hover:underline focus:underline"
-              target="_blank"
-              rel="noopener"
-              ><fa-icon
-                :icon="['fas', 'file-alt']"
-                class="fa-fw fa-2x"
-              />Program Listing</a
             >
-            <a
-              :href="docs.expenses"
-              class="hover:underline focus:underline"
-              target="_blank"
-              rel="noopener"
-              ><fa-icon
-                :icon="['fas', 'file-invoice-dollar']"
-                class="fa-fw fa-2x"
-              />Expenses</a
-            >
+              <FaIcon :icon="['fas', link.icon]" class="fa-fw fa-2x" />
+              {{ link.title }}
+            </a>
           </div>
           <CtaBtn :url="pathPrefix + 'go'" />
         </div>
 
         <video controls class="w-full mx-auto my-4">
-          <source
-            src="https://res.cloudinary.com/mid-city/video/upload/v1630075672/MPP/promo_lji0ev.mp4"
-            type="video/mp4"
-          />
-          <source
-            src="https://res.cloudinary.com/mid-city/video/upload/v1630075673/MPP/promo_wrw2cu.webm"
-            type="video/webm"
-          />
+          <source :src="content.videoUrlMp4" type="video/mp4" />
+          <source :src="content.videoUrlWebm" type="video/webm" />
         </video>
       </div>
     </div>
@@ -138,20 +96,8 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity'
-const contentQuery = groq`{"content": *[_type == 'details'][0] | { body, downloads }}`
+const contentQuery = groq`{"content": *[_type == 'details'][0] | { body, downloads, videoUrlMp4, videoUrlWebm }}`
 export default {
-  data() {
-    return {
-      docs: {
-        calendar:
-          'https://res.cloudinary.com/mid-city/image/upload/v1603397967/MPP/2021_Marketing_Calendar_l6yubb.pdf',
-        programs:
-          'https://res.cloudinary.com/mid-city/image/upload/v1603397969/MPP/2021_MPP_Manuf_Programs_sxtdxa.pdf',
-        expenses:
-          'https://res.cloudinary.com/mid-city/image/upload/v1603397962/MPP/2021_Marketing_Expenses_o2vrog.pdf',
-      },
-    }
-  },
   async asyncData({ $sanity }) {
     return await $sanity.fetch(contentQuery)
   },
