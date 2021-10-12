@@ -1,25 +1,46 @@
 <template>
   <div>
-    <Hero :show-greeting="true" :greeting-name="name" />
-    <LazyJeffLetter />
+    <Hero :show-greeting="true" :greeting-name="vendor.name" />
+    <div
+      class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-1"
+      id="note-from-jeff"
+    >
+      <div class="relative">
+        <article class="prose mx-auto md:ml-44 md:mr-0 px-4 my-16">
+          <NuxtImg
+            :src="content.portraitPubId"
+            width="768"
+            height="768"
+            sizes="xl:160px"
+            alt="Jeff New"
+            class="
+              block
+              w-40
+              h-40
+              md:absolute
+              md:-inset-y-1 md:-inset-x-1
+              mx-auto
+              md:m-0
+              rounded-full
+            "
+          />
+          <SanityContent :blocks="content.body" />
+        </article>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { groq } from '@nuxtjs/sanity'
-const query = groq`*[_id == $id][0].name`
+const query = groq`{ 
+	"vendor": *[_id == $id][0] | { name },
+  "content": *[_type == 'landing'][0] | { body, portraitPubId }
+}`
 export default {
   layout: 'landing',
-  data() {
-    return {
-      name: '',
-    }
-  },
-  async fetch() {
-    const result = await this.$sanity.fetch(query, {
-      id: this.$route.params.id,
-    })
-    this.name = result
+  async asyncData({ $sanity, route }) {
+    return await $sanity.fetch(query, { id: route.params.id })
   },
   head() {
     return {

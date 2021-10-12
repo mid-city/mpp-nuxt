@@ -7,14 +7,17 @@
     >
       <div class="relative">
         <article class="prose mx-auto md:ml-44 md:mr-0 px-4 my-16">
-          <img
-            :src="content.portraitUrl"
+          <NuxtImg
+            :src="content.portraitPubId"
+            width="768"
+            height="768"
+            sizes="xl:160px"
             alt="Jeff New"
             class="
               block
-              md:absolute
               w-40
               h-40
+              md:absolute
               md:-inset-y-1 md:-inset-x-1
               mx-auto
               md:m-0
@@ -30,7 +33,7 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity'
-const contentQuery = groq`{ "content": *[_type == 'landing'][0] | { body, portraitUrl } }`
+const contentQuery = groq`{ "content": *[_type == 'landing'][0] | { body, portraitPubId } }`
 export default {
   layout: 'landing',
   async asyncData({ $sanity }) {
