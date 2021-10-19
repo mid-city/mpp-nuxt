@@ -1,7 +1,24 @@
 <template>
-  <div class="container bg-hero-image bg-cover bg-top">
+  <div class="wrapper bg-hero-image bg-top">
     <SiteHeader />
-    <div class="h-96"></div>
+    <div class="container flex flex-row justify-end">
+      <div
+        class="
+          h-72
+          flex flex-col
+          items-center
+          justify-between
+          text-6xl
+          uppercase
+          mb-10
+          mr-10
+        "
+      >
+        <span class="trust text-8xl">Trust</span>
+        <span class="and text-white">&amp;</span>
+        <span class="transparency text-white">Transparency</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -29,3 +46,17 @@ export default {
   },
 }
 </script>
+<style scoped>
+.wrapper {
+  background-size: 140rem;
+}
+.trust {
+  font-family: 'Andada Pro', serif;
+}
+.and {
+  font-family: 'Convergence', sans-serif;
+}
+.transparency {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+</style>
