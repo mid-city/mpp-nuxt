@@ -2,19 +2,30 @@
   <div
     class="
       flex flex-col
-      leading-loose
       items-center
       justify-between
-      text-5xl text-white
+      text-5xl
+      sm:text-6xl
+      md:text-7xl
+      xl:text-8xl
+      2xl:text-9xl
+      text-white
       uppercase
       py-8
-      lg:pb-32
-      lg:pt-16
+      lg:py-40
+      xl:py-36
+      2xl:py-28
+      h-56
+      sm:h-64
+      md:h-72
+      lg:h-full
     "
   >
     <span class="trust text-black">Trust</span>
-    <span class="and text-3xl">&amp;</span>
-    <span class="transparency text-3xl">Transparency</span>
+    <span class="and text-3xl sm:text-4xl md:text-5xl 2xl:text-6xl">&amp;</span>
+    <span class="transparency text-3xl sm:text-4xl md:text-5xl 2xl:text-6xl"
+      >Transparency</span
+    >
   </div>
 </template>
 

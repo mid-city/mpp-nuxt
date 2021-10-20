@@ -29,7 +29,7 @@
           "
         >
           <Greeting v-if="showGreeting" :name="greetingName" />
-          <div class="sm:text-center lg:text-left">
+          <div class="text-center lg:text-left">
             <h2
               class="
                 hero-text
@@ -41,6 +41,8 @@
                 sm:text-5xl
                 sm:leading-none
                 md:text-6xl
+                h-20
+                sm:h-auto
               "
             >
               2022 Marketing Partnership Plan
@@ -157,13 +159,34 @@ export default {
   }
 } */
 .bg-stuff {
-  background-image:/* linear-gradient(
+  background-image: linear-gradient(
       to bottom,
-      transparent 35%,
-      rgba(219, 219, 219, 0.8),
-      transparent 85%
-    ), */ url('https://res.cloudinary.com/mid-city/image/upload/f_auto,q_auto/v1634066095/MPP/AdobeStock_192180956_t9gj61.jpg');
-  background-size: cover;
+      transparent 5%,
+      rgba(219, 219, 219, 0.65),
+      transparent 80%
+    ),
+    url('https://res.cloudinary.com/mid-city/image/upload/f_auto,q_auto/v1634066095/MPP/AdobeStock_192180956_t9gj61.jpg');
+  background-size: 135rem;
   background-position: top;
+}
+@media (min-width: 640px) {
+  .bg-stuff {
+    background-size: 155rem;
+  }
+}
+@media (min-width: 768px) {
+  .bg-stuff {
+    background-size: 185rem;
+  }
+}
+@media (min-width: 1024px) {
+  .bg-stuff {
+    background-size: 125rem;
+  }
+}
+@media (min-width: 1536px) {
+  .bg-stuff {
+    background-size: cover;
+  }
 }
 </style>
