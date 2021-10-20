@@ -165,7 +165,7 @@ export default {
       rgba(219, 219, 219, 0.65),
       transparent 80%
     ),
-    url('https://res.cloudinary.com/mid-city/image/upload/f_auto,q_auto/v1634066095/MPP/AdobeStock_192180956_t9gj61.jpg');
+    url('https://res.cloudinary.com/mid-city/image/upload/c_scale,f_auto,q_auto,w_2960/v1634066095/MPP/AdobeStock_192180956_t9gj61.jpg');
   background-size: 135rem;
   background-position: top;
 }
@@ -187,6 +187,12 @@ export default {
 @media (min-width: 1536px) {
   .bg-stuff {
     background-size: cover;
+  }
+}
+@media (min-width: 2170px) {
+  .bg-stuff {
+    background-size: cover;
+    background-position: center;
   }
 }
 </style>
