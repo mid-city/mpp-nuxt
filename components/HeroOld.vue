@@ -1,6 +1,6 @@
 <template>
-  <div class="relative bg-white overflow-hidden">
-    <div class="max-w-screen-2xl mx-auto">
+  <div class="relative bg-gray-100 overflow-hidden">
+    <div class="max-w-screen-2xl mx-auto bg-gray-300">
       <div
         class="
           relative
@@ -15,26 +15,6 @@
           xl:pb-32
         "
       >
-        <svg
-          class="
-            hidden
-            lg:block
-            absolute
-            right-0
-            inset-y-0
-            h-full
-            w-56
-            text-white
-            transform
-            translate-x-1/2
-          "
-          fill="currentColor"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <polygon points="50,0 100,0 50,100 0,100" />
-        </svg>
-
         <HeroHeader />
 
         <main
@@ -66,38 +46,7 @@
               "
             >
               2022 Marketing Partnership Plan
-              <br class="" />
-              <span
-                class="
-                  text-brand-normal
-                  uppercase
-                  mt-10
-                  inline-block
-                  text-5xl
-                  sm:text-6xl
-                  md:text-7xl
-                "
-                >Agility</span
-              >
             </h2>
-            <p
-              class="
-                mt-3
-                text-base text-gray-500
-                sm:mt-5
-                sm:text-lg
-                sm:max-w-xl
-                sm:mx-auto
-                md:mt-5
-                md:text-xl
-                lg:mx-0
-              "
-            >
-              <strong>Agility a·gil·i·ty</strong>
-              <strong>/əˈjilədē/ (noun)</strong>
-              The capability to respond to challenges, to explore and change
-              direction, to take advantage of opportunities.
-            </p>
             <div
               class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
             >
@@ -169,6 +118,7 @@
             </div>
           </div>
         </main>
+        <!--
         <div
           class="w-full text-center mt-6 text-brand-normal lg:relative lg:top-8"
         >
@@ -177,10 +127,12 @@
             Read Jeff's Introduction</a
           >
           <FaIcon :icon="['fas', 'chevron-down']" class="fa-fw" />
-        </div>
+        </div> -->
       </div>
     </div>
-    <HeroImage />
+    <TrustTransparencyText
+      class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2"
+    />
   </div>
 </template>
 
