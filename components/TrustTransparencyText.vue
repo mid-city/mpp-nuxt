@@ -28,10 +28,11 @@
     >
   </div>
 </template>
+<script>
+export default {}
+</script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:wght@600&family=Convergence&family=Source+Sans+Pro:wght@600&display=swap&text=TRUSANPENCY%26');
-
 .trust {
   font-family: 'Andada Pro', serif;
 }
