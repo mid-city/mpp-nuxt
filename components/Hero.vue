@@ -130,7 +130,7 @@
               <Greeting
                 v-if="showGreeting"
                 :name="greetingName"
-                class="absolute -top-8 w-full lg:w-auto"
+                class="text-gray-200 absolute -top-8 w-full lg:w-auto"
               />
             </div>
           </div>

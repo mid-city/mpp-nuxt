@@ -12,7 +12,7 @@
       lg:px-8
     "
   >
-    <Greeting :name="vendor.name" class="py-4" />
+    <Greeting :name="vendor.name" class="text-brand-dark py-4" />
     <h2 class="pageHeading">Plan Details</h2>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div

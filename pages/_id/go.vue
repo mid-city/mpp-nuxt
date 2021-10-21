@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <Greeting :name="vendor.name" class="py-4" />
+    <Greeting :name="vendor.name" class="text-brand-dark py-4" />
     <h2 class="pageHeading">Get Started</h2>
 
     <div class="grid lg:grid-cols-10 lg:gap-6 xl:gap-8 my-4">
