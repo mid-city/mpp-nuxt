@@ -29,9 +29,6 @@ module.exports = {
           darkest: '#821A1F',
         },
       },
-      fontSize: {
-        '7xl': '6rem',
-      },
       inset: {
         '-1': '-0.25rem',
         '-44': '-11rem',
