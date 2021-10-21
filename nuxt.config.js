@@ -1,6 +1,3 @@
-// Must generate dynamic routes
-// Query Sanity for list of Vendor IDs, generate paths based on response.
-// Set sanity options in one place, for use in nuxt config and dynamicRoutes
 const sanityClient = require('@sanity/client')
 const sanityOpts = {
   projectId: process.env.SANITY_PROJECT,
@@ -16,7 +13,6 @@ const sanity = sanityClient({
 const webFontUrl =
   'https://fonts.googleapis.com/css2?family=Andada+Pro:wght@600&family=Convergence&family=Source+Sans+Pro:wght@600&display=swap&text=TRUSANPENCY%26'
 
-// generates array of dynamic routes for generate.routes
 let dynamicRoutes = () => {
   return sanity
     .fetch('*[_type == "Manufacturer" || _type == "Rep"]._id')
@@ -25,7 +21,6 @@ let dynamicRoutes = () => {
     })
 }
 
-// rest of config
 export default {
   target: 'static',
 
@@ -56,6 +51,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
+
     link: [
       {
         rel: 'stylesheet',
