@@ -17,30 +17,37 @@
         <HeroHeader />
         <main
           class="
-            mt-10
+            pt-10
             mx-auto
             max-w-screen-xl
             px-4
             sm:px-6
-            md:mt-16
-            lg:mt-20
+            md:pt-16
+            lg:pt-20
             lg:px-8
-            xl:mt-28
+            xl:pt-28
           "
         >
-          <Greeting v-if="showGreeting" :name="greetingName" />
+          <Greeting
+            v-if="showGreeting"
+            :name="greetingName"
+            class="absolute top-2 sm:left-6 lg:left-8"
+          />
           <div class="text-center lg:text-left">
             <h2
               class="
+                lg:relative
+                lg:-top-8
+                xl:-top-10
                 hero-text
                 text-4xl
-                tracking-tight
                 leading-10
                 font-extrabold
-                text-brand-light
+                text-gray-900
                 sm:text-5xl
                 sm:leading-none
                 md:text-6xl
+                xl:text-7xl
                 h-20
                 sm:h-auto
               "
@@ -152,18 +159,13 @@ export default {
 }
 </script>
 <style scoped>
-/* @supports (-webkit-text-stroke: 1px #ccc) {
-  .hero-text {
-    -webkit-text-stroke: 1px #ccc;
-    -webkit-text-fill-color: black;
-  }
-} */
 .bg-stuff {
+  background-color: #afafaf;
   background-image: linear-gradient(
       to bottom,
       transparent 5%,
-      rgba(219, 219, 219, 0.65),
-      transparent 80%
+      rgba(219, 219, 219, 0.7),
+      transparent 85%
     ),
     url('https://res.cloudinary.com/mid-city/image/upload/c_scale,f_auto,q_auto,w_2960/v1634066095/MPP/AdobeStock_192180956_t9gj61.jpg');
   background-size: 135rem;
