@@ -14,8 +14,8 @@
                   justify-center
                   p-2
                   rounded-md
-                  text-gray-400
-                  hover:text-gray-500
+                  text-gray-500
+                  hover:text-gray-600
                   hover:bg-gray-100
                   focus:outline-none
                   focus:bg-gray-100
@@ -52,7 +52,7 @@
             aria-label="Home"
             class="
               font-medium
-              text-gray-500
+              text-gray-600
               hover:text-gray-900
               transition
               duration-150
@@ -65,7 +65,7 @@
             class="
               ml-8
               font-medium
-              text-gray-500
+              text-gray-600
               hover:text-gray-900
               transition
               duration-150
