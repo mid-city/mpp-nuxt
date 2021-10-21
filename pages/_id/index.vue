@@ -44,7 +44,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.name}`,
+      title: `${this.vendor.name}`,
     }
   },
 }

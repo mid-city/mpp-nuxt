@@ -117,7 +117,7 @@ export default {
   },
   head() {
     return {
-      title: `Plan Details - ${this.name}`,
+      title: `Plan Details - ${this.vendor.name}`,
     }
   },
 }
