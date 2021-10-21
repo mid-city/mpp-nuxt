@@ -6,8 +6,7 @@
       justify-between
       text-5xl
       sm:text-6xl
-      md:text-7xl
-      xl:text-8xl
+      md:text-8xl
       2xl:text-9xl
       text-white
       uppercase
