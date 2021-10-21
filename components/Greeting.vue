@@ -1,5 +1,5 @@
 <template>
-  <p class="text-brand-dark italic text-center text-sm">Welcome, {{ name }}!</p>
+  <p class="text-gray-200 italic text-center text-sm">Welcome, {{ name }}!</p>
 </template>
 
 <script>

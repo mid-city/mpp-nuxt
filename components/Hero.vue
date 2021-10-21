@@ -28,12 +28,7 @@
             xl:pt-28
           "
         >
-          <Greeting
-            v-if="showGreeting"
-            :name="greetingName"
-            class="absolute top-2 sm:left-6 lg:left-8"
-          />
-          <div class="text-center lg:text-left">
+          <div class="sm:text-center lg:text-left">
             <h2
               class="
                 lg:relative
@@ -42,6 +37,8 @@
                 hero-text
                 text-4xl
                 leading-10
+                tracking-tight
+                sm:tracking-normal
                 font-extrabold
                 text-gray-900
                 sm:text-5xl
@@ -56,7 +53,14 @@
             </h2>
             <TrustTransparencyText class="lg:hidden" />
             <div
-              class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
+              class="
+                relative
+                mt-5
+                sm:mt-8
+                sm:flex
+                sm:justify-center
+                lg:justify-start
+              "
             >
               <div class="rounded-md shadow">
                 <NuxtLink
@@ -123,6 +127,11 @@
                   Details
                 </NuxtLink>
               </div>
+              <Greeting
+                v-if="showGreeting"
+                :name="greetingName"
+                class="absolute -top-8 w-full lg:w-auto"
+              />
             </div>
           </div>
         </main>
