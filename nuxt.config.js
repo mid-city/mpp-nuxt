@@ -13,6 +13,9 @@ const sanity = sanityClient({
   ...sanityOpts,
 })
 
+const webFontUrl =
+  'https://fonts.googleapis.com/css2?family=Andada+Pro:wght@600&family=Convergence&family=Source+Sans+Pro:wght@600&display=swap&text=TRUSANPENCY%26'
+
 // generates array of dynamic routes for generate.routes
 let dynamicRoutes = () => {
   return sanity
@@ -56,8 +59,9 @@ export default {
     link: [
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Andada+Pro:wght@600&family=Convergence&family=Source+Sans+Pro:wght@600&display=swap&text=TRUSANPENCY%26',
+        href: webFontUrl,
+        media: 'print',
+        onload: "this.media='all'",
       },
     ],
   },
