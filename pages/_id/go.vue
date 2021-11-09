@@ -8,6 +8,7 @@
       <div class="col-span-5 lg:col-span-4">
         <RepNumbers :vend="vendor" v-if="vendor._type === 'Rep'" />
         <MfgNumbers :vend="vendor" v-if="vendor._type === 'Manufacturer'" />
+        <SanityContent :blocks="content.bodyVend" class="prose my-4" />
       </div>
       <div class="border-brand-dark border-2 rounded col-span-5 lg:col-span-6">
         <ResponseForm :vendId="vendor._id" :vendName="vendor.name" />
@@ -20,7 +21,7 @@
 import { groq } from '@nuxtjs/sanity'
 const query = groq`{ 
 	"vendor": *[_id == $id][0],
-  "content": *[_type == 'getStarted'][0] | { body }
+  "content": *[_type == 'getStarted'][0] | { bodyVend }
 }`
 export default {
   async asyncData({ $sanity, route }) {

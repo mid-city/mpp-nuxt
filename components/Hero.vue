@@ -26,9 +26,23 @@
             lg:pt-20
             lg:px-8
             xl:pt-28
+            relative
           "
         >
           <div class="sm:text-center lg:text-left">
+            <Greeting
+              v-if="showGreeting"
+              :name="greetingName"
+              class="
+                text-brand-dark
+                absolute
+                top-2
+                lg:top-4
+                xl:top-6
+                w-full
+                lg:w-auto
+              "
+            />
             <h2
               class="
                 lg:relative
@@ -127,11 +141,6 @@
                   Details
                 </NuxtLink>
               </div>
-              <Greeting
-                v-if="showGreeting"
-                :name="greetingName"
-                class="text-gray-200 absolute -top-8 w-full lg:w-auto"
-              />
             </div>
           </div>
         </main>

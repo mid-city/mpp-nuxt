@@ -43,33 +43,6 @@
         </tbody>
       </table>
     </div>
-    <div class="my-4 prose">
-      <p>
-        If our purchases for 2021 are less than $100,000, your commitment amount
-        is 2% of our total 2021 purchases.
-      </p>
-      <p>
-        If our purchases for 2021 are greater than $100,000, your commitment
-        amount is 1% of our total 2021 purchases.
-      </p>
-      <p>
-        If our purchases have declined for 3 consective years, you are in the
-        plan for free.
-      </p>
-      <p>
-        Your commitment to the program is due by
-        <strong>December 31, 2021</strong>. Because we do not have final
-        purchase numbers yet, we will send out the final commitment numbers in
-        early January and the payment will be due by
-        <strong>February 26, 2022</strong>.
-      </p>
-      <p>
-        Questions? Please contact Leah Cooper at
-        <a href="mailto:lcooper@mid-city.com">lcooper@mid-city.com</a> or
-        <a href="tel:574-294-5551">(574) 294-5551</a>.
-      </p>
-      <p>Thank you for partnering with Mid-City!</p>
-    </div>
   </div>
 </template>
 
