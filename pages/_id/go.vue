@@ -47,3 +47,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+.prose a {
+  display: inline-block;
+}
+</style>
