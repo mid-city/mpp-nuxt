@@ -6,9 +6,14 @@
     <div class="grid lg:grid-cols-10 lg:gap-6 xl:gap-8 my-4">
       <!-- Wrapper for table + text -->
       <div class="col-span-5 lg:col-span-4">
-        <RepNumbers :vend="vendor" v-if="vendor._type === 'Rep'" />
-        <MfgNumbers :vend="vendor" v-if="vendor._type === 'Manufacturer'" />
-        <SanityContent :blocks="content.bodyVend" class="prose my-4" />
+        <div v-if="isRep">
+          <RepNumbers :vend="vendor" />
+          <SanityContent :blocks="content.bodyRep" class="prose my-4" />
+        </div>
+        <div v-if="isMfg">
+          <MfgNumbers :vend="vendor" />
+          <SanityContent :blocks="content.bodyVend" class="prose my-4" />
+        </div>
       </div>
       <div class="border-brand-dark border-2 rounded col-span-5 lg:col-span-6">
         <ResponseForm :vendId="vendor._id" :vendName="vendor.name" />
@@ -21,11 +26,19 @@
 import { groq } from '@nuxtjs/sanity'
 const query = groq`{ 
 	"vendor": *[_id == $id][0],
-  "content": *[_type == 'getStarted'][0] | { bodyVend }
+  "content": *[_type == 'getStarted'][0] | { bodyVend, bodyRep }
 }`
 export default {
   async asyncData({ $sanity, route }) {
     return await $sanity.fetch(query, { id: route.params.id })
+  },
+  computed: {
+    isRep() {
+      return this.vendor._type === 'Rep' ? true : false
+    },
+    isMfg() {
+      return this.vendor._type === 'Manufacturer' ? true : false
+    },
   },
   head() {
     return {
