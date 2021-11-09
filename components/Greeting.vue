@@ -1,5 +1,5 @@
 <template>
-  <p class="italic text-lg">Welcome, {{ name }}!</p>
+  <p class="italic text-center text-lg">Welcome, {{ name }}!</p>
 </template>
 
 <script>
