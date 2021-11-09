@@ -7,7 +7,7 @@
     <div class="my-4 prose">
       <p>
         As a manufacturer's rep, your commitment is a flat
-        <span class="text-brand-darkest font-bold">${{ vend.due }}</span
+        <span class="text-brand-darkest font-bold">{{ vend.due }}</span
         >.
       </p>
       <p>

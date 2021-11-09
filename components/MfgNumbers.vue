@@ -21,10 +21,6 @@
         </thead>
         <tbody class="">
           <tr>
-            <th>2016</th>
-            <td>$ {{ vend.purch_2016 }}</td>
-          </tr>
-          <tr>
             <th>2017</th>
             <td>$ {{ vend.purch_2017 }}</td>
           </tr>
@@ -37,13 +33,13 @@
             <td>$ {{ vend.purch_2019 }}</td>
           </tr>
           <tr>
-            <th>2020 (Thru Sept.)</th>
-            <td>$ {{ vend.purch_2020_ytd }}</td>
+            <th>2020</th>
+            <td>$ {{ vend.purch_2020 }}</td>
           </tr>
-          <!-- <tr>
-              <th>2020 Projected</th>
-              <td>$ {{ vend.purch_2020_projected }}</td>
-            </tr> -->
+          <tr>
+            <th>2021 (Thru Oct. 1)</th>
+            <td>$ {{ vend.purch_2021_ytd }}</td>
+          </tr>
         </tbody>
       </table>
     </div>
