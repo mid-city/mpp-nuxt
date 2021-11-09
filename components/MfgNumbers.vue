@@ -22,23 +22,23 @@
         <tbody class="">
           <tr>
             <th>2017</th>
-            <td>$ {{ vend.purch_2017 }}</td>
+            <td>{{ vend.purch_2017 }}</td>
           </tr>
           <tr>
             <th>2018</th>
-            <td>$ {{ vend.purch_2018 }}</td>
+            <td>{{ vend.purch_2018 }}</td>
           </tr>
           <tr>
             <th>2019</th>
-            <td>$ {{ vend.purch_2019 }}</td>
+            <td>{{ vend.purch_2019 }}</td>
           </tr>
           <tr>
             <th>2020</th>
-            <td>$ {{ vend.purch_2020 }}</td>
+            <td>{{ vend.purch_2020 }}</td>
           </tr>
           <tr>
             <th>2021 (Thru Oct. 1)</th>
-            <td>$ {{ vend.purch_2021_ytd }}</td>
+            <td>{{ vend.purch_2021_ytd }}</td>
           </tr>
         </tbody>
       </table>
