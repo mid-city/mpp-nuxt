@@ -131,7 +131,7 @@
 
       <FormulateInput
         type="submit"
-        :disabled="context.hasErrors"
+        :disabled="context.hasErrors || context.isLoading"
         :name="context.isLoading ? 'Processing...' : 'Submit'"
       />
     </FormulateForm>
@@ -164,6 +164,17 @@ export default {
         comments: '',
         address: '',
       },
+      initialForm: {
+        name: '',
+        email: '',
+        phone: '',
+        response: '',
+        questions: '',
+        contactPreference: '',
+        invoice: '',
+        comments: '',
+        address: '',
+      },
       success: false,
     }
   },
@@ -183,8 +194,9 @@ export default {
             'Content-Type': 'application/json; charset=UTF-8',
           },
         })
+
         this.success = true
-        document.getElementById('responseForm').reset()
+        this.form = this.initialForm
       } catch (err) {
         this.$formulate.handle(err, 'responseForm')
       }
