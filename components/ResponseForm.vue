@@ -10,6 +10,7 @@
       name="responseForm"
       @submit="submitResponse"
       #default="context"
+      id="responseForm"
     >
       <FormulateInput
         v-model="form.address"
@@ -183,6 +184,7 @@ export default {
           },
         })
         this.success = true
+        document.getElementById('responseForm').reset()
       } catch (err) {
         this.$formulate.handle(err, 'responseForm')
       }
