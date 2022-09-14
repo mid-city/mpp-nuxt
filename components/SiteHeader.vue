@@ -26,7 +26,7 @@
                 text-brand-normal
               "
             >
-              <h1 class="py-2">2022 Marketing Partnership Plan</h1>
+              <h1 class="py-2">2023 Marketing Partnership Plan</h1>
             </NuxtLink>
             <div class="-mr-2 flex items-center lg:hidden order-3">
               <button
@@ -82,7 +82,7 @@
             text-brand-normal
           "
         >
-          <h1>2022 Marketing Partnership Plan</h1>
+          <h1>2023 Marketing Partnership Plan</h1>
         </NuxtLink>
         <div class="hidden lg:block md:ml-10 md:pr-4 md:order-3">
           <NuxtLink
