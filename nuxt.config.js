@@ -67,7 +67,7 @@ export default {
   },
 
   server: {
-    host: '10.34.1.49',
+    host: 'localhost',
   },
 
   sanity: sanityOpts,
