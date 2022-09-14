@@ -63,7 +63,7 @@
                 sm:h-auto
               "
             >
-              2022 Marketing Partnership Plan
+              2023 Marketing Partnership Plan
             </h2>
             <TrustTransparencyText class="lg:hidden" />
             <div
