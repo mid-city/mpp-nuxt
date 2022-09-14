@@ -53,7 +53,7 @@
         </a>
       </div>
       <p class="copyright mt-8">
-        Copyright &copy; 2021 Mid-City Supply Co., Inc.
+        Copyright &copy; {{ year }} Mid-City Supply Co., Inc.
       </p>
     </div>
   </footer>
@@ -62,6 +62,11 @@
 <script>
 export default {
   name: 'SiteFooter',
+  computed: {
+    year() {
+      return new Date().getFullYear()
+    },
+  },
 }
 </script>
 
