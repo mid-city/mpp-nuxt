@@ -11,8 +11,10 @@
             :src="content.portraitPubId"
             width="768"
             height="768"
-            sizes="xl:160px"
+            fit="thumbnail"
+            sizes="xl:320px"
             alt="Jeff New"
+            :modifiers="{ gravity: 'face', zoom: 0.85 }"
             class="
               block
               w-40
@@ -35,7 +37,7 @@
 import { groq } from '@nuxtjs/sanity'
 const query = groq`{ 
 	"vendor": *[_id == $id][0] | { name },
-  "content": *[_type == 'landing'][0] | { body, portraitPubId }
+  "content": *[_type == 'landing'] | order(version desc) { body, portraitPubId }[0] 
 }`
 export default {
   layout: 'landing',
