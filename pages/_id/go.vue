@@ -26,7 +26,7 @@
 import { groq } from '@nuxtjs/sanity'
 const query = groq`{ 
 	"vendor": *[_id == $id][0],
-  "content": *[_type == 'getStarted'][0] | { bodyVend, bodyRep }
+  "content": *[_type == 'getStarted'] | order(version desc) { bodyVend, bodyRep }[0]
 }`
 export default {
   async asyncData({ $sanity, route }) {
