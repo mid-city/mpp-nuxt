@@ -98,10 +98,12 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity'
+
 const query = groq`{
 	"vendor": *[_id == $id][0] | { name },
-	"content": *[_type == 'details'][0] | { body, downloads, videoUrlMp4, videoUrlWebm }
+  "content": *[_type == 'details'] | order(version desc) { body, downloads, videoUrlMp4, videoUrlWebm }[0]
 }`
+
 export default {
   computed: {
     pathPrefix() {
@@ -112,9 +114,11 @@ export default {
       }
     },
   },
+
   async asyncData({ $sanity, route }) {
     return await $sanity.fetch(query, { id: route.params.id })
   },
+
   head() {
     return {
       title: `Plan Details - ${this.vendor.name}`,

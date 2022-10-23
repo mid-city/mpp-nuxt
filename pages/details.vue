@@ -96,11 +96,16 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity'
-const contentQuery = groq`{"content": *[_type == 'details'][0] | { body, downloads, videoUrlMp4, videoUrlWebm }}`
+
+const contentQuery = groq`{
+  "content": *[_type == 'details'] | order(version desc) { body, downloads, videoUrlMp4, videoUrlWebm }[0]
+}`
+
 export default {
   async asyncData({ $sanity }) {
     return await $sanity.fetch(contentQuery)
   },
+
   computed: {
     pathPrefix() {
       if (this.$route.params.id) {
@@ -110,6 +115,7 @@ export default {
       }
     },
   },
+
   head() {
     return {
       title: 'Plan Details',
