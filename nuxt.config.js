@@ -29,7 +29,7 @@ export default {
   modules: ['@nuxtjs/axios'],
 
   buildModules: [
-    '@nuxtjs/tailwindcss',
+    '@nuxt/postcss8',
     '@nuxtjs/fontawesome',
     '@nuxtjs/sanity/module',
     '@braid/vue-formulate/nuxt',
@@ -87,6 +87,15 @@ export default {
   privateRuntimeConfig: {
     sanity: {
       token: process.env.SANITY_TOKEN,
+    },
+  },
+
+  build: {
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
     },
   },
 
