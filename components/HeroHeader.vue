@@ -1,10 +1,25 @@
 <template>
-  <div>
+  <header>
     <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
       <nav class="relative flex items-center justify-between lg:justify-start">
         <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
           <div class="flex items-center justify-between w-full md:w-auto">
-            <Logo />
+            <!-- Logo -->
+            <div class="w-28 sm:w-32 lg:w-40">
+              <a
+                href="https://www.mid-city.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <NuxtImg
+                  src="Logos/MID-CITY_SUPPLY_Vector_White_dntt1t"
+                  alt="Mid-City Logo"
+                  width="698"
+                  height="353"
+                  sizes="xs:112px sm:128px lg:160px"
+                />
+              </a>
+            </div>
             <div class="-mr-2 flex items-center md:hidden">
               <button
                 type="button"
@@ -14,7 +29,7 @@
                   justify-center
                   p-2
                   rounded-md
-                  text-gray-500
+                  text-gray-300
                   hover:text-gray-600
                   hover:bg-gray-100
                   focus:outline-none
@@ -52,8 +67,8 @@
             aria-label="Home"
             class="
               font-medium
-              text-gray-600
-              hover:text-gray-900
+              text-gray-300
+              hover:text-gray-100
               transition
               duration-150
               ease-in-out
@@ -65,8 +80,8 @@
             class="
               ml-8
               font-medium
-              text-gray-600
-              hover:text-gray-900
+              text-gray-300
+              hover:text-gray-100
               transition
               duration-150
               ease-in-out
@@ -78,8 +93,8 @@
             class="
               ml-8
               font-medium
-              text-brand-normal
-              hover:text-brand-darkest
+              text-gray-100
+              hover:text-white
               transition
               duration-150
               ease-in-out
@@ -236,7 +251,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>

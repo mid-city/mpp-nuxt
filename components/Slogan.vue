@@ -8,7 +8,7 @@
       sm:text-5xl
       md:text-7xl
       2xl:text-10xl
-      text-white
+      text-gray-100
       uppercase
       py-8
       lg:py-40
@@ -20,9 +20,10 @@
       lg:h-full
     "
   >
-    <span class="text text-black">LONGEVITY</span>
+    <span class="text">LONGEVITY</span>
   </div>
 </template>
+
 <script>
 export default {}
 </script>

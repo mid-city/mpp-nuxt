@@ -54,7 +54,7 @@
                 tracking-tight
                 sm:tracking-normal
                 font-extrabold
-                text-gray-900
+                text-gray-200
                 sm:text-5xl
                 sm:leading-none
                 md:text-6xl
@@ -118,15 +118,15 @@
                     justify-center
                     px-8
                     py-3
-                    border border-gray-200
+                    border border-gray-300
                     text-base
                     leading-6
                     font-medium
                     rounded-md
-                    text-gray-200
-                    bg-transparent
+                    text-gray-700
+                    bg-gray-300
                     hover:text-brand-normal
-                    hover:bg-indigo-50
+                    hover:bg-gray-100
                     focus:outline-none
                     focus:shadow-outline-indigo
                     focus:border-indigo-300
@@ -184,38 +184,37 @@ export default {
   background-color: #afafaf;
   background-image: linear-gradient(
       to bottom,
-      transparent 5%,
-      rgba(219, 219, 219, 0.7),
-      transparent 85%
+      rgba(10, 0, 0, 0.8),
+      transparent 25%,
+      transparent
     ),
-    url('https://res.cloudinary.com/mid-city/image/upload/c_scale,f_auto,q_auto,w_2960/v1634066095/MPP/AdobeStock_192180956_t9gj61.jpg');
-  background-size: 135rem;
-  background-position: top;
+    url('https://res.cloudinary.com/brycemco/image/upload/a_hflip/q_auto/f_auto/c_crop,g_center,h_0.50,w_0.70/e_sepia/e_saturation:-25/e_brightness:-15/temp/mid-city/mpp_2023_bg');
+  background-size: 80rem;
+  background-position-x: 70%;
+  background-position-y: 50%;
 }
 @media (min-width: 640px) {
   .bg-stuff {
-    background-size: 155rem;
+    background-size: 100rem;
   }
 }
 @media (min-width: 768px) {
   .bg-stuff {
-    background-size: 185rem;
+    background-position-y: top;
   }
 }
 @media (min-width: 1024px) {
   .bg-stuff {
-    background-size: 125rem;
+    background-size: 80rem;
+    background-position-y: 40%;
   }
 }
 @media (min-width: 1536px) {
   .bg-stuff {
     background-size: cover;
+    background-position-y: center;
   }
 }
 @media (min-width: 2170px) {
-  .bg-stuff {
-    background-size: cover;
-    background-position: center;
-  }
 }
 </style>
