@@ -65,7 +65,7 @@
             >
               2023 Marketing Partnership Plan
             </h2>
-            <TrustTransparencyText class="lg:hidden" />
+            <Slogan class="lg:hidden" />
             <div
               class="
                 relative
@@ -146,13 +146,15 @@
         </main>
       </div>
     </div>
-    <TrustTransparencyText
+    <Slogan
       class="hidden lg:flex lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2"
     />
   </div>
 </template>
 
 <script>
+import Slogan from './Slogan.vue'
+
 export default {
   name: 'Hero',
   props: {
@@ -174,6 +176,7 @@ export default {
       }
     },
   },
+  components: { Slogan },
 }
 </script>
 <style scoped>
