@@ -4,10 +4,10 @@
       flex flex-col
       items-center
       justify-between
-      text-5xl
-      sm:text-6xl
-      md:text-8xl
-      2xl:text-9xl
+      text-4xl
+      sm:text-5xl
+      md:text-7xl
+      2xl:text-10xl
       text-white
       uppercase
       py-8
@@ -20,11 +20,7 @@
       lg:h-full
     "
   >
-    <span class="trust text-black">Trust</span>
-    <span class="and text-3xl sm:text-4xl md:text-5xl 2xl:text-6xl">&amp;</span>
-    <span class="transparency text-3xl sm:text-4xl md:text-5xl 2xl:text-6xl"
-      >Transparency</span
-    >
+    <span class="text text-black">LONGEVITY</span>
   </div>
 </template>
 <script>
@@ -32,13 +28,7 @@ export default {}
 </script>
 
 <style scoped>
-.trust {
-  font-family: 'Andada Pro', serif;
-}
-.and {
-  font-family: 'Convergence', sans-serif;
-}
-.transparency {
-  font-family: 'Source Sans Pro', sans-serif;
+.text {
+  font-family: 'Rubik Dirt', serif;
 }
 </style>
