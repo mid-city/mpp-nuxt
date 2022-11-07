@@ -3,14 +3,7 @@
     <p class="mb-4 text-xl">Your purchase numbers to date:</p>
     <!-- Wrapper for Table, fill in bg corners -->
     <div
-      class="
-        border-2 border-brand-dark
-        w-full
-        md:w-auto
-        rounded
-        overflow-hidden
-        bg-brand-dark
-      "
+      class="border-2 border-brand-dark w-full md:w-auto rounded overflow-hidden bg-brand-dark"
     >
       <table class="w-full">
         <thead class="bg-brand-dark text-gray-50">
@@ -20,10 +13,6 @@
           </tr>
         </thead>
         <tbody class="">
-          <tr>
-            <th>2017</th>
-            <td>{{ vend.purch_2017 }}</td>
-          </tr>
           <tr>
             <th>2018</th>
             <td>{{ vend.purch_2018 }}</td>
@@ -37,8 +26,12 @@
             <td>{{ vend.purch_2020 }}</td>
           </tr>
           <tr>
-            <th>2021 (Thru Oct. 1)</th>
-            <td>{{ vend.purch_2021_ytd }}</td>
+            <th>2021</th>
+            <td>{{ vend.purch_2021 }}</td>
+          </tr>
+          <tr>
+            <th>2022 (Thru Oct. 1)</th>
+            <td>{{ vend.purch_2022_ytd }}</td>
           </tr>
         </tbody>
       </table>
