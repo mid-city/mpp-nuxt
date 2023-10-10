@@ -11,42 +11,14 @@
             <Logo class="order-1" />
             <NuxtLink
               :to="pathPrefix"
-              class="
-                mt-2
-                md:mt-0
-                w-full
-                sm:w-auto
-                block
-                order-last
-                sm:order-2
-                lg:hidden
-                font-bold
-                text-lg
-                md:text-xl
-                text-brand-normal
-              "
+              class="mt-2 md:mt-0 w-full sm:w-auto block order-last sm:order-2 lg:hidden font-bold text-lg md:text-xl text-brand-normal"
             >
-              <h1 class="py-2">2023 Marketing Partnership Plan</h1>
+              <h1 class="py-2">2024 Marketing Partnership Plan</h1>
             </NuxtLink>
             <div class="-mr-2 flex items-center lg:hidden order-3">
               <button
                 type="button"
-                class="
-                  inline-flex
-                  items-center
-                  justify-center
-                  p-2
-                  rounded-md
-                  text-gray-400
-                  hover:text-gray-500
-                  hover:bg-gray-100
-                  focus:outline-none
-                  focus:bg-gray-100
-                  focus:text-gray-500
-                  transition
-                  duration-150
-                  ease-in-out
-                "
+                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
                 id="main-menu"
                 aria-label="Main menu"
                 aria-haspopup="true"
@@ -71,57 +43,25 @@
         </div>
         <NuxtLink
           to="./"
-          class="
-            heading
-            hidden
-            lg:block
-            font-bold
-            text-sm
-            lg:text-lg
-            xl:text-xl
-            text-brand-normal
-          "
+          class="heading hidden lg:block font-bold text-sm lg:text-lg xl:text-xl text-brand-normal"
         >
-          <h1>2023 Marketing Partnership Plan</h1>
+          <h1>2024 Marketing Partnership Plan</h1>
         </NuxtLink>
         <div class="hidden lg:block md:ml-10 md:pr-4 md:order-3">
           <NuxtLink
             :to="pathPrefix"
             aria-label="Home"
-            class="
-              font-medium
-              text-gray-500
-              hover:text-gray-900
-              transition
-              duration-150
-              ease-in-out
-            "
+            class="font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
             >MPP Home</NuxtLink
           >
           <NuxtLink
             :to="pathPrefix + 'details'"
-            class="
-              ml-8
-              font-medium
-              text-gray-500
-              hover:text-gray-900
-              transition
-              duration-150
-              ease-in-out
-            "
+            class="ml-8 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out"
             >Details</NuxtLink
           >
           <NuxtLink
             :to="pathPrefix + 'go'"
-            class="
-              ml-8
-              font-medium
-              text-brand-normal
-              hover:text-brand-darkest
-              transition
-              duration-150
-              ease-in-out
-            "
+            class="ml-8 font-medium text-brand-normal hover:text-brand-darkest transition duration-150 ease-in-out"
             >Get Started</NuxtLink
           >
         </div>
@@ -138,16 +78,7 @@
             To: "opacity-0 scale-95"
         -->
     <div
-      class="
-        absolute
-        top-0
-        inset-x-0
-        p-2
-        transition
-        transform
-        origin-top-right
-        lg:hidden
-      "
+      class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden"
       :class="menuClass"
     >
       <div class="rounded-lg shadow-md">
@@ -162,22 +93,7 @@
             <div class="-mr-2">
               <button
                 type="button"
-                class="
-                  inline-flex
-                  items-center
-                  justify-center
-                  p-2
-                  rounded-md
-                  text-gray-400
-                  hover:text-gray-500
-                  hover:bg-gray-100
-                  focus:outline-none
-                  focus:bg-gray-100
-                  focus:text-gray-500
-                  transition
-                  duration-150
-                  ease-in-out
-                "
+                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
                 aria-label="Close menu"
                 @click="closeMenu"
               >
@@ -201,46 +117,13 @@
             <NuxtLink
               :to="pathPrefix"
               aria-label="Home"
-              class="
-                block
-                px-3
-                py-2
-                rounded-md
-                text-base
-                font-medium
-                text-gray-700
-                hover:text-gray-900
-                hover:bg-gray-50
-                focus:outline-none
-                focus:text-gray-900
-                focus:bg-gray-50
-                transition
-                duration-150
-                ease-in-out
-              "
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
               role="menuitem"
               >MPP Home</NuxtLink
             >
             <NuxtLink
               :to="pathPrefix + 'details'"
-              class="
-                mt-1
-                block
-                px-3
-                py-2
-                rounded-md
-                text-base
-                font-medium
-                text-gray-700
-                hover:text-gray-900
-                hover:bg-gray-50
-                focus:outline-none
-                focus:text-gray-900
-                focus:bg-gray-50
-                transition
-                duration-150
-                ease-in-out
-              "
+              class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
               role="menuitem"
               >Details</NuxtLink
             >
@@ -248,24 +131,7 @@
           <div>
             <NuxtLink
               :to="pathPrefix + 'go'"
-              class="
-                block
-                w-full
-                px-5
-                py-3
-                text-center
-                font-medium
-                text-brand-normal
-                bg-gray-50
-                hover:bg-gray-100
-                hover:text-brand-dark
-                focus:outline-none
-                focus:bg-gray-100
-                focus:text-brand-dark
-                transition
-                duration-150
-                ease-in-out
-              "
+              class="block w-full px-5 py-3 text-center font-medium text-brand-normal bg-gray-50 hover:bg-gray-100 hover:text-brand-dark focus:outline-none focus:bg-gray-100 focus:text-brand-dark transition duration-150 ease-in-out"
               role="menuitem"
             >
               Get Started

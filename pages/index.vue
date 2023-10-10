@@ -15,16 +15,7 @@
             sizes="xl:320px"
             alt="Jeff New"
             :modifiers="{ gravity: 'face', zoom: 0.85 }"
-            class="
-              block
-              w-40
-              h-40
-              md:absolute
-              md:-inset-y-1 md:-inset-x-1
-              mx-auto
-              md:m-0
-              rounded-full
-            "
+            class="block w-40 h-40 md:absolute md:-inset-y-1 md:-inset-x-1 mx-auto md:m-0 rounded-full"
           />
           <SanityContent :blocks="content.body" />
         </article>
