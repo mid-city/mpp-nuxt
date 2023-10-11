@@ -86,7 +86,7 @@ export default {
       transparent 25%,
       transparent
     ),
-    url('https://res.cloudinary.com/brycemco/image/upload/a_hflip/q_auto/f_auto/c_crop,g_center,h_0.50,w_0.70/e_sepia/e_saturation:-25/e_brightness:-15/temp/mid-city/mpp_2024_bg');
+    url('https://res.cloudinary.com/brycemco/image/upload/a_hflip/q_auto/f_auto/c_crop,g_center,h_0.50,w_0.70/e_sepia/e_saturation:-25/e_brightness:-15/temp/mid-city/mpp_2023_bg');
   background-size: 80rem;
   background-position-x: 70%;
   background-position-y: 50%;
