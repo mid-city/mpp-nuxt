@@ -1,15 +1,7 @@
 <template>
   <footer class="py-4 text-gray-50 text-center bg-brand-darkest">
     <div
-      class="
-        flex flex-wrap
-        justify-evenly
-        container
-        px-4
-        sm:px-6
-        lg:px-8
-        mx-auto
-      "
+      class="flex flex-wrap justify-evenly container px-4 sm:px-6 lg:px-8 mx-auto"
     >
       <div class="contact">
         <h3>Contact Information</h3>
@@ -28,28 +20,28 @@
           rel="noopener"
           target="_blank"
         >
-          <fa-icon :icon="['fab', 'facebook']" class="fa-2x" />
+          <fa-icon :icon="['fab', 'facebook']" class="fa-2x h-8 w-8" />
         </a>
         <a
           href="https://www.linkedin.com/company/mid-city-supply-co.-inc/"
           rel="noopener"
           target="_blank"
         >
-          <fa-icon :icon="['fab', 'linkedin']" class="fa-2x fa-fw" />
+          <fa-icon :icon="['fab', 'linkedin']" class="fa-2x fa-fw h-8 w-8" />
         </a>
         <a
           href="https://www.youtube.com/user/MidCitySupply"
           rel="noopener"
           target="_blank"
         >
-          <fa-icon :icon="['fab', 'youtube']" class="fa-2x fa-fw" />
+          <fa-icon :icon="['fab', 'youtube']" class="fa-2x fa-fw h-8 w-8" />
         </a>
         <a
           href="https://www.instagram.com/midcitysupply/"
           rel="noopener"
           target="_blank"
         >
-          <fa-icon :icon="['fab', 'instagram']" class="fa-2x fa-fw" />
+          <fa-icon :icon="['fab', 'instagram']" class="fa-2x fa-fw h-8 w-8" />
         </a>
       </div>
       <p class="copyright mt-8">
