@@ -1,17 +1,5 @@
 <template>
-  <div
-    class="
-      container
-      mx-auto
-      grid grid-cols-1
-      text-sm
-      md:text-base
-      mb-6
-      px-4
-      sm:px-6
-      lg:px-8
-    "
-  >
+  <div class="grid grid-cols-1 text-sm md:text-base mb-6">
     <h2 class="pageHeading">Plan Details</h2>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div
@@ -38,16 +26,7 @@
 
       <div>
         <div
-          class="
-            downloads
-            hidden
-            lg:flex
-            font-bold
-            py-4
-            items-center
-            justify-evenly
-            flex-auto
-          "
+          class="downloads hidden lg:flex font-bold py-4 items-center justify-evenly flex-auto"
         >
           <div>
             <p class="text-lg text-brand-normal my-2 ml-1">Downloads</p>

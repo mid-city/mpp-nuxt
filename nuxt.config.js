@@ -19,8 +19,8 @@ const webFontUrl =
 let dynamicRoutes = () => {
   return sanity
     .fetch('*[_type == "Manufacturer" || _type == "Rep"]._id')
-    .then(res => {
-      return res.flatMap(id => [`/${id}`, `/${id}/details`, `/${id}/go`])
+    .then((res) => {
+      return res.flatMap((id) => [`/${id}`, `/${id}/details`, `/${id}/go`])
     })
 }
 
@@ -44,10 +44,10 @@ export default {
   css: ['~/assets/css/main.css'],
 
   head: {
-    titleTemplate: titleChunk => {
+    titleTemplate: (titleChunk) => {
       return titleChunk
-        ? `${titleChunk} - Mid-City MPP 2022`
-        : 'Mid-City MPP 2022'
+        ? `${titleChunk} - Mid-City MPP 2024`
+        : 'Mid-City MPP 2024'
     },
 
     meta: [

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Hero :show-greeting="false" />
+    <Hero2 :show-greeting="false" />
     <div
       class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-1"
       id="note-from-jeff"

@@ -19,7 +19,7 @@
             >
               2024 Marketing Partnership Plan
             </h2>
-            <Slogan class="lg:hidden" />
+
             <div
               class="relative mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
             >
@@ -44,9 +44,6 @@
         </main>
       </div>
     </div>
-    <Slogan
-      class="hidden lg:flex lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2"
-    />
   </div>
 </template>
 
@@ -80,16 +77,11 @@ export default {
 <style scoped>
 .bg-stuff {
   background-color: #afafaf;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(10, 0, 0, 0.8),
-      transparent 25%,
-      transparent
-    ),
-    url('https://res.cloudinary.com/brycemco/image/upload/a_hflip/q_auto/f_auto/c_crop,g_center,h_0.50,w_0.70/e_sepia/e_saturation:-25/e_brightness:-15/temp/mid-city/mpp_2023_bg');
-  background-size: 80rem;
+  background-image: url('https://res.cloudinary.com/brycemco/image/upload/q_auto/f_auto/temp/mid-city/mpp_2024_bg');
+  /* background-size: 80rem;
   background-position-x: 70%;
-  background-position-y: 50%;
+  background-position-y: 50%; */
+  background-position: cover;
 }
 @media (min-width: 640px) {
   .bg-stuff {

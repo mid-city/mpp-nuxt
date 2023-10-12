@@ -1,6 +1,6 @@
 <template>
   <div>
     <Nuxt />
-    <LazySiteFooter />
+    <SiteFooter />
   </div>
 </template>
