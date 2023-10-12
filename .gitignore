@@ -4,3 +4,4 @@ node_modules
 .archive
 .vscode
 .env
+.DS_Store
