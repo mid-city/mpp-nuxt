@@ -1,6 +1,8 @@
 <template>
   <div class="grid grid-cols-1 text-sm md:text-base mb-6">
-    <Greeting :name="vendor.name" class="text-brand-dark py-4" />
+    <div class="flex justify-center mb-10">
+      <Greeting :name="vendor.name" />
+    </div>
     <h2 class="pageHeading">Plan Details</h2>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div

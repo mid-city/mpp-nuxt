@@ -140,17 +140,21 @@
           "
         ></div>
       </div>
-      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      <div class="mx-auto max-w-2xl py-16 sm:pb-32">
         <div class="text-center">
+          <div class="mb-10 sm:mb-16 flex justify-center">
+            <Greeting v-if="showGreeting" :name="greetingName" />
+          </div>
           <h1
-            class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+            class="text-4xl font-bold tracking-tight text-gray-700 sm:text-6xl"
           >
             Marketing Partnership Plan 2024
           </h1>
-          <p class="mt-6 text-lg leading-8 text-gray-600">
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-            lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-            fugiat aliqua.
+          <p
+            class="my-10 sm:my-16 md:my-20 lg:mt-24 leading-8 text-gray-900 uppercase tracking-widest text-4xl sm:text-6xl lg:text-8xl"
+            style="font-family: 'Josefin Sans', sans-serif"
+          >
+            Resilience
           </p>
           <div class="mt-10 flex items-center justify-center gap-x-6">
             <a

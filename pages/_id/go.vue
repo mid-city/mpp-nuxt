@@ -1,6 +1,9 @@
 <template>
   <div class="mb-6">
-    <Greeting :name="vendor.name" class="text-brand-dark py-4" />
+    <div class="flex justify-center mb-10">
+      <Greeting :name="vendor.name" />
+    </div>
+
     <h2 class="pageHeading">Get Started</h2>
 
     <div class="grid lg:grid-cols-10 lg:gap-6 xl:gap-8 my-4">
