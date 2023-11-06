@@ -12,26 +12,10 @@
             <th>Purchases</th>
           </tr>
         </thead>
-        <tbody class="">
-          <tr>
-            <th>2018</th>
-            <td>{{ vend.purch_2018 }}</td>
-          </tr>
-          <tr>
-            <th>2019</th>
-            <td>{{ vend.purch_2019 }}</td>
-          </tr>
-          <tr>
-            <th>2020</th>
-            <td>{{ vend.purch_2020 }}</td>
-          </tr>
-          <tr>
-            <th>2021</th>
-            <td>{{ vend.purch_2021 }}</td>
-          </tr>
-          <tr>
-            <th>2022 (Thru Oct. 1)</th>
-            <td>{{ vend.purch_2022_ytd }}</td>
+        <tbody>
+          <tr v-for="row in tableRows" :key="row.year">
+            <th>{{ row.year }}</th>
+            <td>{{ row.purchases }}</td>
           </tr>
         </tbody>
       </table>
@@ -55,12 +39,42 @@ tbody tr:nth-of-type(2n + 1) {
 </style>
 
 <script>
+const currentYear = 2023
+
 export default {
   name: 'MfgNumbers',
+
   props: {
     vend: {
       type: Object,
       required: true,
+    },
+  },
+
+  computed: {
+    tableRows() {
+      return [
+        {
+          year: String(currentYear - 4),
+          purchases: String(this.vend.purch_prev_year_minus_3),
+        },
+        {
+          year: String(currentYear - 3),
+          purchases: String(this.vend.purch_prev_year_minus_2),
+        },
+        {
+          year: String(currentYear - 2),
+          purchases: String(this.vend.purch_prev_year_minus_1),
+        },
+        {
+          year: String(currentYear - 1),
+          purchases: String(this.vend.purch_prev_year),
+        },
+        {
+          year: String(currentYear) + ' (Thru Oct. 1)',
+          purchases: String(this.vend.purch_current_year_ytd),
+        },
+      ]
     },
   },
 }
