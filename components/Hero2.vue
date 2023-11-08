@@ -36,7 +36,7 @@
             v-for="item in navigation"
             :key="item.name"
             :href="item.href"
-            class="text-sm font-semibold leading-6 text-gray-900"
+            class="font-semibold leading-6 text-brand-normal"
             >{{ item.name }}</a
           >
         </nav>
@@ -89,7 +89,7 @@
                   v-for="item in navigation"
                   :key="item.name"
                   :href="item.href"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-brand-normal hover:bg-gray-50"
                   >{{ item.name }}</a
                 >
               </div>
@@ -140,9 +140,9 @@
           "
         ></div>
       </div>
-      <div class="mx-auto max-w-2xl py-16 sm:pb-32">
+      <div class="mx-auto max-w-2xl py-16">
         <div class="text-center">
-          <div class="mb-10 sm:mb-16 flex justify-center">
+          <div class="mb-10 flex justify-center">
             <Greeting v-if="showGreeting" :name="greetingName" />
           </div>
           <h1
@@ -151,7 +151,7 @@
             Marketing Partnership Plan 2024
           </h1>
           <p
-            class="my-10 sm:my-16 md:my-20 lg:mt-24 leading-8 text-gray-900 uppercase tracking-widest text-4xl sm:text-6xl lg:text-8xl"
+            class="my-10 sm:my-16 leading-8 text-gray-900 uppercase tracking-widest text-4xl sm:text-6xl lg:text-8xl"
             style="font-family: 'Josefin Sans', sans-serif"
           >
             Resilience

@@ -42,7 +42,7 @@
           v-for="item in navigation"
           :key="item.name"
           :href="item.href"
-          class="text-sm font-semibold leading-6 text-gray-900"
+          class="font-semibold leading-6 text-brand-normal"
           >{{ item.name }}</a
         >
       </nav>
@@ -90,7 +90,7 @@
                 v-for="item in navigation"
                 :key="item.name"
                 :href="item.href"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-brand-normal hover:bg-gray-50"
                 >{{ item.name }}</a
               >
             </nav>
