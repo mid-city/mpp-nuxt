@@ -6,6 +6,6 @@
       <Nuxt />
     </main>
 
-    <SiteFooter />
+    <SiteFooter class="mt-20" />
   </div>
 </template>
