@@ -206,7 +206,7 @@
 import Logo from './Logo.vue'
 
 export default {
-  name: 'Hero2',
+  name: 'Hero',
 
   props: {
     showGreeting: {
